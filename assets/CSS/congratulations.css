@@ -190,3 +190,13 @@ button:focus {
     align-self: center;
 
 }
+
+.Congratsfont {
+    font-size: 50px;
+}
+
+@media screen and (max-width: 750px) {
+    .Congratsfont {
+        font-size: 30px;
+    }
+}

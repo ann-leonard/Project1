@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="../assets/css/recipestyle.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/congratulations.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <title>sousChef-RecipeSearch</title>
 
@@ -49,27 +49,27 @@
     </nav>
 
     <div class="image">
-        <img id="recipeimage" class="recipeimg" alt="Image">
-        <div id="recipename" class="recipename roundedcorners bg-light titlefont secondarycolor p-2 mw-75"> </div>
-  </div>
-    <div class="bar maincolor"> </div>
-    <div class="container p-1 mt-4">
+            <img id="recipeimage" class="recipeimg" alt="Image">
+            <div id="recipename" class="recipename roundedcorners bg-light titlefont secondarycolor p-2 mw-75"> </div>
+      </div>
+        <div class="bar maincolor"> </div>
+    
+    <div class="container">
         <div class="row">
-            <div class="col-12 secondarycolor titlefont">INGREDIENTS</div>
-        </div>
-        <div class="row">
-            <div id="ingredientslist" class="col-12"></div>
-        </div>
-        <div class="row mt-4">
-            <div class="col-12 secondarycolor titlefont">RECIPE</div>
+            <div class="col-12 mt-5 secondarycolor Congratsfont text-center">
+                CONGRATS! YOU DID IT!
+            </div>
         </div>
         <div class="row">
-            <div id="recipelist" class="col-12"></div>
+                <div class="col-6 mt-4 p-2 text-center">
+                    <a class="contents py-2 px-3 secondarycolor rightfloat mr-5 buttoncolor roundedcorners titlefont" href="userAccount.html"> SAVE</a>
+                </div>
+                <div class="col-6 mt-4 p-2 text-center">
+                    <a class="contents py-2 px-3 secondarycolor leftfloat ml-5 buttoncolor roundedcorners titlefont" href="../index.html">HOME</a>
+                </div>
         </div>
-
     </div>
-
-        <!-- Adding modals for sign up/sign in -->
+    <!-- Adding modals for sign up/sign in -->
     <!-- <div id="modal-signup" class="modal">
         <div class="modal-content col-md-6 mt-3">
             <h4>Sign Up</h4><br />
@@ -105,59 +105,15 @@
             </div>
         </div>
 
-
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript">
-    //ADD THE RECIPE IMAGE TO THE TOP
-    //Variable with the image src
-    var selectedrecipeimg = "../assets/images/Spghetti&Meatballs.jpg"
-    var selectedrecipename = "Spaghetti with Meatballs"
-    var selectedingredients = ["2 (30 ounce) jars spaghetti sauce", "2 lbs lean ground beef" , "2 eggs" , "3⁄4 cup dry breadcrumbs", "1⁄4 cup fresh parsley, chopped", "1 garlic clove, minced" , "1⁄2-1 teaspoon salt", "1⁄4 cup parmesan cheese" , "1 lb spaghetti, cooked al dente"]
-    var selectedrecipe = ["Place sauce in a large saucepan and simmer over medium heat" , "In large bowl mix beef, eggs, crumbs, parsley, garlic, salt and Parmesan.", "Shape into 18 meatballs.", "Place meatballs in simmering sauce.", "When sauce returns to a simmer, cover and cook 30-35 minutes (or more!) till cooked through.", "Serve sauce and meatballs over warm spaghetti."]
-    //Attach variable to the website
-    $("#recipeimage").attr("src", selectedrecipeimg)   
-    $("#recipename").html(selectedrecipename)
-    //Include the ingredients in the html
-    for(var i=0; i < selectedingredients.length; i++){
-        //create a var with <div>
-        var ingredientbox = $("<button class='buttoncolor secondarycolor roundedcorners px-3 py-1 border-0 m-1'>" + selectedingredients[i] + "</button>")
-        console.log (ingredientbox)
-        $("#ingredientslist").append(ingredientbox)
-    }
-    for(var i=0; i< selectedrecipe.length; i++){
-        var recipebox = $("<div  class='my-4'>")
-        var topbox =$("<div>")
-        var stepnumber = i+1
-        topbox.append("<div class='step"+stepnumber+" leftfloat secondarycolor subtitlefont'> STEP " + stepnumber +"</div>")
-        topbox.append("<div class='checkbttn' data-value='"+ stepnumber + "'><i class='far rightfloat fa-square secondarycolor'></i></div>")
-        recipebox.append(topbox)
-        recipebox.append("<br>")
-        recipebox.append("<div class='step"+stepnumber+" secondarycolor lineheight my-1 textfont'>" + selectedrecipe[i] + "</div>")
-        $("#recipelist").append(recipebox)
-    }
 
+var selectedrecipeimg = "../assets/images/Spghetti&Meatballs.jpg"
+var selectedrecipename = "Spaghetti with Meatballs"
 
-    $(".checkbttn").on("click", function () {
-        var number = parseInt(($(this).attr("data-value")))
-        console.log (number)
-        console.log (selectedrecipe.length)
-        if (number === selectedrecipe.length){
-        console.log("you did it")
-        window.location.replace("Congratulations.html")
-        }
-        else{
-        var graymachine = "step"+ ($(this).attr("data-value"))
-        console.log(graymachine)
-        $("."+graymachine).removeClass("secondarycolor")
-        $("."+graymachine).addClass("fadedcolor")
-        $(this).empty()
-        $(this).html("<i class='far fa-check-square rightfloat fadedcolor'></i>")
-        }
-    })
-
+$("#recipeimage").attr("src", selectedrecipeimg)   
+$("#recipename").html(selectedrecipename)
 
 </script>
-
 </body>
-
 </html>
