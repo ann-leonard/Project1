@@ -1,0 +1,39 @@
+
+#maincolor {
+    background-color: #ffc866;
+    height: 90px;
+}
+
+.logoimage {
+    height: 30px;
+}
+
+
+
+
+#footerHome {
+    height: 80px;
+}
+
+
+#uploadMoreBtn {
+    border-radius: 35px;
+    width: 190px;
+    height: 50px; 
+    padding-top:8px;
+    font-size:23px;
+    color: #f9b443;
+    font-weight: 400;
+}
+
+#rForm {
+    position: relative;
+   margin-top: -600px;
+   background-color: #ffc866;
+   border-radius: 5px;
+}
+
+#submitBtn {
+    border-radius: 25px 0px 25px 0px;
+}
+

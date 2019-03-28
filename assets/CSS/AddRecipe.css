@@ -1,0 +1,26 @@
+#maincolor {
+    background-color: #ffc866;
+    height: 90px;
+}
+
+.logoimage {
+    height: 30px;
+}
+
+
+
+#accountBtn, #usernameBtn {
+
+    color:white;
+}
+
+.userImg {
+    border-radius: 50px;
+}
+
+
+#footerHome {
+    height: 80px;
+}
+
+
