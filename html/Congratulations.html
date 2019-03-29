@@ -7,7 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="../assets/css/congratulations.css">
+    <link rel="stylesheet" href="https://use.typekit.net/pqy5rcu.css">
+    <link rel="stylesheet" type="text/css" href="../assets/CSS/congratulations.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <title>sousChef-RecipeSearch</title>
 
@@ -42,7 +43,7 @@
             </a>
         <div class="row mr-1">
             <form class="form-inline">
-                <button class="btn whitebg roundedcorners secondarycolor border-0 my-4 my-sm-0 modal-trigger logged-out titlefont" type="submit" data-target="modal-login">Sign in</button>
+                <button class="btn whitebg roundedcorners secondarycolor border-0 my-4 my-sm-0 modal-trigger logged-out titlefont muli" type="submit" data-target="modal-login">Sign in</button>
                 <!-- <button class="btn btn-outline-success my-4 my-sm-0 logged-in" type="submit" id="logout-button">Log Out</button> -->
             </form>
         </div>
@@ -50,22 +51,22 @@
 
     <div class="image">
             <img id="recipeimage" class="recipeimg" alt="Image">
-            <div id="recipename" class="recipename roundedcorners bg-light titlefont secondarycolor p-2 mw-75"> </div>
+            <div id="recipename" class="recipename roundedcorners bg-light titlefont secondarycolor p-2 mw-75 muli"> </div>
       </div>
         <div class="bar maincolor"> </div>
     
     <div class="container">
         <div class="row">
-            <div class="col-12 mt-5 secondarycolor Congratsfont text-center">
+            <div class="col-12 mt-5 secondarycolor Congratsfont text-center muli">
                 CONGRATS! YOU DID IT!
             </div>
         </div>
         <div class="row">
                 <div class="col-6 mt-4 p-2 text-center">
-                    <a class="contents py-2 px-3 secondarycolor rightfloat mr-5 buttoncolor roundedcorners titlefont" href="userAccount.html"> SAVE</a>
+                    <a class="contents py-2 px-3 secondarycolor rightfloat mr-5 buttoncolor roundedcorners titlefont muli" href="userAccount.html"> SAVE</a>
                 </div>
                 <div class="col-6 mt-4 p-2 text-center">
-                    <a class="contents py-2 px-3 secondarycolor leftfloat ml-5 buttoncolor roundedcorners titlefont" href="../index.html">HOME</a>
+                    <a class="contents py-2 px-3 secondarycolor leftfloat ml-5 buttoncolor roundedcorners titlefont muli" href="../index.html">HOME</a>
                 </div>
         </div>
     </div>
@@ -92,15 +93,15 @@
             <div class="modal-content col-md-5 mt-3 rightfloat maincolor roundedcorners p-3 border-0 mr-2 mt-4">
                 <form id="login-form">
                     <div class="input-field">
-                        <label class="textfont whitefont titlefont mb-0" for="login-email"> Email Address</label>                    
+                        <label class="textfont whitefont titlefont mb-0 muli" for="login-email"> Email Address</label>                    
                         <input class="border-0 roundedcorners pl-2 button nooutline w-100" type="email" id="login-email" required />
                     </div>
                     <div class="input-field">
-                        <label class="textfont whitefont titlefont mb-0" for="login-password">Password</label>                 
+                        <label class="textfont whitefont titlefont mb-0 muli" for="login-password">Password</label>                 
                         <input class="border-0 roundedcorners pl-2 button nooutline w-100" type="password" id="login-password" required />
                     </div>
-                    <button class="btn roundedcorners secondarycolor yellow darken-2 z-depth-0 mt-2" id="button-login">Login</button>
-                    <button class="btn roundedcorners secondarycolor mt-2 logged-out" type="submit" data-target="modal-signup" id="signup-button">Sign up</button>
+                    <button class="btn roundedcorners secondarycolor yellow darken-2 z-depth-0 mt-2 muli" id="button-login">Login</button>
+                    <button class="btn roundedcorners secondarycolor mt-2 logged-out muli" type="submit" data-target="modal-signup" id="signup-button">Sign up</button>
                 </form>
             </div>
         </div>
@@ -108,7 +109,7 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript">
 
-var selectedrecipeimg = "../assets/images/Spghetti&Meatballs.jpg"
+var selectedrecipeimg = "../assets/Images/Spghetti&Meatballs.jpg"
 var selectedrecipename = "Spaghetti with Meatballs"
 
 $("#recipeimage").attr("src", selectedrecipeimg)   

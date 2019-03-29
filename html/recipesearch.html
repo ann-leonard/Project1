@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="../assets/css/recipesearchstyle.css">
+    <link rel="stylesheet" href="https://use.typekit.net/pqy5rcu.css">
+    <link rel="stylesheet" type="text/css" href="../assets/CSS/recipesearchstyle.css">
     <title>sousChef-RecipeSearch</title>
 
      <!-- Javascript link -->
@@ -39,7 +40,7 @@
         </a>
             <div class="row mr-1">
                 <form class="form-inline">
-                    <button class="btn whitebg roundedcorners secondarycolor border-0 my-4 my-sm-0 modal-trigger logged-out titlefont" type="submit" data-target="modal-login">
+                    <button class="btn whitebg roundedcorners secondarycolor border-0 my-4 my-sm-0 modal-trigger logged-out titlefont muli" type="submit" data-target="modal-login">
                         Sign in
                     </button>
                     <!-- <button class="btn btn-outline-success my-4 my-sm-0 logged-in" type="submit" id="logout-button">Log Out</button> -->
@@ -51,13 +52,13 @@
     <div class="bar maincolor"> </div>
     <div class="container mb-2 mt-4">
         <div class="row">
-            <div class="col-12 secondarycolor titlefont">
+            <div class="col-12 secondarycolor titlefont muli">
                 HELP US FIND WHAT YOU ARE LOOKING FOR 
             </div>
         </div>
     </div>
     <div class="container bg-light rounded my-2 p-4">
-        <div class="row secondarycolor titlefont">
+        <div class="row secondarycolor titlefont muli">
             <div class="col-12">Diatery Restrictions</div>
         </div>
         <div class="row">
@@ -68,7 +69,7 @@
                 <button class="drrecipebttn secondarycolor roundedcorners border-0 buttoncolor pl-3 pr-3 mx-1 pb-1 buttonfont my-1" clicked="off" value="None">None</button>
             </div>
         </div>
-        <div class="row secondarycolor titlefont mt-3">
+        <div class="row secondarycolor titlefont mt-3 muli">
             <div class="col-12">Country</div>
         </div>
         <div class="row">
@@ -95,7 +96,7 @@
                 <button class="arrecipebttn secondarycolor roundedcorners border-0 buttoncolor pl-3 pr-3 mx-1 pb-1 buttonfont my-1" clicked="off" value="Vietnamese">Vietnamese</button>
             </div>
         </div>
-        <div class="row secondarycolor titlefont mt-3">
+        <div class="row secondarycolor titlefont mt-3 muli">
             <div class="col-12">What are you into the mood for?</div>
         </div>
         <div class="row">
@@ -119,7 +120,7 @@
         <div class="row">
             <div class="col-12">
                 <a href="SearchResult.html">
-                    <div id="submitbttn" class="secondarycolor roundedcorners text-center mt-5 titlefont buttoncolor">SUBMIT</div>
+                    <div id="submitbttn" class="secondarycolor roundedcorners text-center mt-5 titlefont buttoncolor muli">SUBMIT</div>
                 </a>
             </div>
         </div>
@@ -147,15 +148,15 @@
         <div class="modal-content col-md-5 mt-3 rightfloat maincolor roundedcorners p-3 border-0 mr-2 mt-4">
             <form id="login-form">
                 <div class="input-field">
-                    <label class="textfont whitefont titlefont mb-0" for="login-email"> Email Address</label>                    
+                    <label class="textfont whitefont titlefont mb-0 muli" for="login-email"> Email Address</label>                    
                     <input class="border-0 roundedcorners pl-2 button nooutline w-100" type="email" id="login-email" required />
                 </div>
                 <div class="input-field">
-                    <label class="textfont whitefont titlefont mb-0" for="login-password">Password</label>                 
+                    <label class="textfont whitefont titlefont mb-0 muli" for="login-password">Password</label>                 
                     <input class="border-0 roundedcorners pl-2 button nooutline w-100" type="password" id="login-password" required />
                 </div>
-                <button class="btn roundedcorners secondarycolor yellow darken-2 z-depth-0 mt-2" id="button-login">Login</button>
-                <button class="btn roundedcorners secondarycolor mt-2 logged-out" type="submit" data-target="modal-signup" id="signup-button">Sign up</button>
+                <button class="btn roundedcorners secondarycolor yellow darken-2 z-depth-0 mt-2 muli" id="button-login">Login</button>
+                <button class="btn roundedcorners secondarycolor mt-2 logged-out muli" type="submit" data-target="modal-signup" id="signup-button">Sign up</button>
             </form>
         </div>
     </div>
@@ -186,7 +187,7 @@
 
                     // ADD THE X
                     // Create a Div to hold the x
-                    var xdiv = $("<img class='ml-2 xdrbutton' src=../assets/images/x.png>")
+                    var xdiv = $("<img class='ml-2 xdrbutton' src=../assets/Images/x.png>")
                     // append xdiv to html
                     $(this).append(xdiv)
 
@@ -241,7 +242,7 @@
 
                         // ADD THE X
                         // Create a Div to hold the x
-                        var xdiv = $("<img class='ml-2 xarbutton' src=../assets/images/x.png>")
+                        var xdiv = $("<img class='ml-2 xarbutton' src=../assets/Images/x.png>")
                         // append xdiv to html
                         $(this).append(xdiv)
 
@@ -296,7 +297,7 @@
 
                         // ADD THE X
                         // Create a Div to hold the x
-                        var xdiv = $("<img class='ml-2 xctbutton' src=../assets/images/x.png>")
+                        var xdiv = $("<img class='ml-2 xctbutton' src=../assets/Images/x.png>")
                         // append xdiv to html
                         $(this).append(xdiv)
 
