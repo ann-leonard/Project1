@@ -10,107 +10,90 @@
     <link href="assets/CSS/style.css" type="text/css" rel="stylesheet">
     <title>sousChef</title>
 
-    <!-- Javascript link -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-
-    <!-- Firebase Links -->
-    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
-    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script>
-
-    <script type="text/javascript" src="assets/javascript/logic.js"></script>
-    <script type="text/javascript" src="assets/javascript/data.js"></script>
+     <!-- Javascript link -->
+     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+ 
+     <!-- Firebase Links -->
+     <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-auth.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script>
+     <script type="text/javascript" src="assets/javascript/data.js"></script>
+ 
 </head>
 
 <body>
-
+    <!-- <nav class="navbar maincolor py-4"> -->
+        <!-- <a class="navbar-brand" href="#"><img class="logoimage" src=../assets/Images/SousChef(templogo).png alt="logo"> </a> -->
+    <!-- </nav> -->
+    
     <nav id="maincolor" class="navbar">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="index.html">
             <img class="logoimage" src=assets/Images/SousChef(templogo).png alt="logo"></a>
         <div class="row mr-1">
 
             <form class="form-inline">
-
-                <button class="btn btn-outline-success my-4 my-sm-0 modal-trigger logged-out" type="submit"
+                <button class="btn whitebg roundedcorners secondarycolor border-0 my-4 my-sm-0 modal-trigger logged-out titlefont" type="submit"
                     data-target="modal-login">Sign in</button>
-                <button class="btn btn-outline-success my-4 my-sm-0 logged-out" type="submit"
-                    data-target="modal-signup" id="signup-button">Sign up</button>
-                <button class="btn btn-outline-success my-4 my-sm-0 logged-in" type="submit" id="logout-button">Log Out</button>
+                <!-- <button class="btn btn-outline-success my-4 my-sm-0 logged-in" type="submit" id="logout-button">Log Out</button> -->
             </form>
         </div>
     </nav>
 
-
-
-
-    <img src="assets/images/Homepgbackgroundimg.jpg" class="firstImg" />
+    <img src="assets/images/Homepgbackgroundimg.jpg" class="firstImg"/>
 
 
     <div class="row col-md-12">
-
-        <div id="btnDiv1" class="col-sm-7 text-center">
-            <a id="startCookingBtn" href="#" class="justify-content-end btn bg-white  btn-lg">Start Cooking</a>
+        <div id="btnDiv1" class="col-sm-6 text-center">
+            <a id="startCookingBtn" href="html/recipesearch.html" class="justify-content-end btn bg-white btn-lg">Find Recipe</a>
         </div>
-        <div id="btnDiv2" class="col-sm-5">
-            <a id="findRecipeBtn" href="userAccount.html" class="btn bg-white  btn-lg">Find Recipe</a>
-        </div>
-    </div>
-
-
-
-
-
-
-
-    <div class="card">
-        <h5 class="card-header bg-white">Favorite Recipes</h5>
-        <div class="container justify-content-center mt-2">
-        <div id="secondC" class="card d-inline-block col-11">
-
-            
-            <div class="d-inline-block"><img class="yourFavImg" src="assets/images/homePageImages/dummy1.jpg" alt="picture of a favorite meal" />
-                                        <p class="text-center text-warning">Tasty meat balls</p>
-            </div>
-            <div class="d-inline-block  ml-3"><img class="yourFavImg" src="assets/images/homePageImages/dummy2.jpg" alt="picture of a favorite meal" />
-                                        <p class="text-center text-warning">Tasty meat balls</p>
-            </div>
-            <div class="d-inline-block ml-3"><img class="yourFavImg" src="assets/images/homePageImages/dummy3.jpg" alt="picture of a favorite meal" />
-                                        <p class="text-center text-warning">Tasty meat balls</p>
-            </div>
-            <div class="d-inline-block ml-3"><img class="yourFavImg" src="assets/images/homePageImages/dummy4.jpg" alt="picture of a favorite meal" />
-                                        <p class="text-center text-warning">Tasty meat balls</p>
-            </div>
-            <div class="d-inline-block  ml-3"><img class="yourFavImg" src="assets/images/homePageImages/dummy5.jpg" alt="picture of a favorite meal" />
-                                        <p class="text-center text-warning">Tasty meat balls</p>
-            </div>
-            <div class="d-inline-block  ml-3"><img class="yourFavImg" src="assets/images/homePageImages/dummy6.jpg" alt="picture of a favorite meal" />
-                                        <p class="text-center text-warning">Tasty meat balls</p>
-            </div>
-            <div class="d-inline-block ml-3"><img class="yourFavImg" src="assets/images/homePageImages/dummy7.jpg" alt="picture of a favorite meal" />
-                                        <p class="text-center text-warning">Tasty meat balls</p>
-            </div>
-
-            <!-- </div> -->
-
+        <div id="btnDiv2" class="col-sm-6 text-center">
+            <a id="findRecipeBtn" href="html/userAccount.html" class="btn bg-white btn-lg">Start Cooking</a>
         </div>
     </div>
+
+    <div class="conatiner m-2 p-4">
+        <div class="row">
+            <div class="container border-0 mt-2">
+                <div class="row">
+                    <div class="border-0 bg-white secondarycolor titlefont col-12 ml-3 mb-3">
+                        FAVORITE RECIPES
+                    </div>
+                </div>
+
+                <div id="secondC" class="card border-0 d-inline-block col-12">
+                    <div class="d-inline-block"><img class="yourFavImg" src="assets/images/homePageImages/dummy1.jpg" alt="picture of a favorite meal" />
+                        <p class="text-center text-warning">Tasty meat balls</p>
+                    </div>
+                    <div class="d-inline-block  ml-3"><img class="yourFavImg" src="assets/images/homePageImages/dummy2.jpg" alt="picture of a favorite meal" />
+                        <p class="text-center text-warning">Tasty meat balls</p>
+                    </div>
+                    <div class="d-inline-block ml-3"><img class="yourFavImg" src="assets/images/homePageImages/dummy3.jpg" alt="picture of a favorite meal" />
+                        <p class="text-center text-warning">Tasty meat balls</p>
+                    </div>
+                    <div class="d-inline-block ml-3"><img class="yourFavImg" src="assets/images/homePageImages/dummy4.jpg" alt="picture of a favorite meal" />
+                        <p class="text-center text-warning">Tasty meat balls</p>
+                    </div>
+                    <div class="d-inline-block  ml-3"><img class="yourFavImg" src="assets/images/homePageImages/dummy5.jpg" alt="picture of a favorite meal" />
+                        <p class="text-center text-warning">Tasty meat balls</p>
+                    </div>
+                    <div class="d-inline-block  ml-3"><img class="yourFavImg" src="assets/images/homePageImages/dummy6.jpg" alt="picture of a favorite meal" />
+                        <p class="text-center text-warning">Tasty meat balls</p>
+                    </div>
+                    <div class="d-inline-block ml-3"><img class="yourFavImg" src="assets/images/homePageImages/dummy7.jpg" alt="picture of a favorite meal" />
+                        <p class="text-center text-warning">Tasty meat balls</p>
+                    </div>
+                    <!-- </div> -->
+                </div>
+            </div>
+        </div>
     </div>
+
     <div id="footerHome" class="position-static bg-secondary"></div>
-
-
-
-
-
-
 
     <!-- Adding modals for sign up/sign in -->
     <!-- <div id="modal-signup" class="modal">
@@ -132,18 +115,18 @@
 
     <div id="modal-login" class="modal">
 
-        <div class="modal-content col-md-6 mt-3">
-            <h4>Login</h4><br />
+        <div class="modal-content col-md-5 mt-3 floatright maincolor roundedcorners p-3 border-0 mr-2 mt-4">
             <form id="login-form">
                 <div class="input-field">
-                    <input type="email" id="login-email" required />
-                    <label for="login-email"> Email address</label>
+                    <label class="textfont whitefont titlefont mb-0" for="login-email"> Email Address</label>                    
+                    <input class="border-0 roundedcorners pl-2 button nooutline w-100" type="email" id="login-email" required />
                 </div>
                 <div class="input-field">
-                    <input type="password" id="login-password" required />
-                    <label for="login-password">Your Password</label>
+                    <label class="textfont whitefont titlefont mb-0" for="login-password">Password</label>                 
+                    <input class="border-0 roundedcorners pl-2 button nooutline w-100" type="password" id="login-password" required />
                 </div>
-                <button class="btn yellow darken-2 z-depth-0" id="button-login">Login</button>
+                <button class="btn roundedcorners secondarycolor yellow darken-2 z-depth-0 mt-2" id="button-login">Login</button>
+                <button class="btn roundedcorners secondarycolor mt-2 logged-out" type="submit" data-target="modal-signup" id="signup-button">Sign up</button>
             </form>
         </div>
     </div>
