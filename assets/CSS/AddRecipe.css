@@ -23,4 +23,8 @@
     height: 80px;
 }
 
-
+.rmBtn {
+    border-radius: 15px;
+    font-size:16px;
+    width:auto;
+}
