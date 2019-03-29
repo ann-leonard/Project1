@@ -64,7 +64,7 @@ $(document).ready(function () {
         //creating a user
         $("#signup-button").on("click", (e) => {
             function registrationPage() {
-                window.open("Registration.html")
+                window.open("html/Registration.html")
             }
 
             registrationPage();
@@ -82,12 +82,13 @@ $(document).ready(function () {
             auth.createUserWithEmailAndPassword(email, password).then(cred => {
                 return db.collection("users").doc(cred.user.uid).set({
                     name: $("#name").val(), 
-                    age: $("#age").val()
+                    age: $("#age").val(),
+                    favfood: 
                 });
             });
 
             function userAccount() {
-                open("userAccount.html")
+                open("html/userAccount.html")
             }
 
             userAccount();
@@ -121,7 +122,7 @@ $(document).ready(function () {
                 // loginForm.reset();
                 
                 function myFunction() {
-                    window.open("userAccount.html");
+                    window.open("html/userAccount.html");
                 }
 
                 myFunction()
