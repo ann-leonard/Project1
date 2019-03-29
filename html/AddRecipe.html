@@ -9,19 +9,45 @@
   <link href="../assets/CSS/AddRecipe.css" type="text/css" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<<<<<<< HEAD
+=======
+
+  <!-- Javascript link -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+
+  <!-- Firebase Links -->
+  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script>
+  <script type="text/javascript" src="../assets/javascript/data.js"></script>
+>>>>>>> dc56fa71f1e982d577ec6f8ada4f61463180d36b
 </head>
 
 <body>
 
   <nav id="maincolor" class="navbar">
     <a class="navbar-brand" href="#">
+<<<<<<< HEAD
       <img class="logoimage ml-0" src="../assets/Images/SousChef(templogo).png" alt="logo"></a>
+=======
+      <img class="logoimage ml-0" src=../assets/Images/SousChef(templogo).png alt="logo"></a>
+>>>>>>> dc56fa71f1e982d577ec6f8ada4f61463180d36b
     <div class="row">
 
       <a id="accountBtn" class="btn  btn-lg mt-2" href="#">Account</a>
       <a id="usernameBtn" class="btn  btn-lg mt-2" href="#">Username</a>
       <img class="userImg mr-3" src="../assets/images/homePageImages/silly-cartoon-face-md.png" alt="user picture"
         width="65px" height="65px" />
+<<<<<<< HEAD
     </div>
   </nav>
 
@@ -53,8 +79,30 @@
       </form>
       <button id="startCooking" type="button" class="btn btn-light text-warning">Start Cooking</button>
       <button id="uploadMore" type="button" class="btn btn-light text-warning">Upload More</button>
+=======
+>>>>>>> dc56fa71f1e982d577ec6f8ada4f61463180d36b
     </div>
+  </nav>
 
+  <div id="mainContent" class="container">
+    <form>
+      <div class="form-group">
+        <label for="exampleFormControlInput1 text-warning">
+          <p class="text-warning mt-3 mb-0">Recipe Name</p>
+        </label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=".....">
+      </div>
+
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">
+          <p class="text-warning mb-0">Step 1</p>
+        </label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      </div>
+    </form>
+  </div>
+
+<<<<<<< HEAD
     <div class="col-5">
       <div class="container mt-3" style="height: 15px;"></div>
       <div class="card mt-3" style="height: 500px;">
@@ -146,6 +194,45 @@
 
   </script>
 
+=======
+  <div id="footerHome" class="fixed-bottom bg-secondary"></div>
+
+      <!-- Adding modals for sign up/sign in -->
+    <!-- <div id="modal-signup" class="modal">
+        <div class="modal-content col-md-6 mt-3">
+            <h4>Sign Up</h4><br />
+            <form id="signup-form">
+                <div class="input-field">
+                    <input type="email" id="signup-email" required />
+                    <label for="signup-email"> Email address</label>
+                </div>
+                <div class="input-field">
+                    <input type="password" id="signup-password" required />
+                    <label for="signup-password">Choose Password</label>
+                </div>
+                <button class="btn yellow darken-2 z-depth-0" id="signup-button">Sign Up</button>
+            </form>
+        </div>
+    </div> -->
+
+    <div id="modal-login" class="modal">
+
+        <div class="modal-content col-md-5 mt-3 floatright maincolor roundedcorners p-3 border-0 mr-2 mt-4">
+            <form id="login-form">
+                <div class="input-field">
+                    <label class="textfont whitefont titlefont mb-0" for="login-email"> Email Address</label>                    
+                    <input class="border-0 roundedcorners pl-2 button nooutline w-100" type="email" id="login-email" required />
+                </div>
+                <div class="input-field">
+                    <label class="textfont whitefont titlefont mb-0" for="login-password">Password</label>                 
+                    <input class="border-0 roundedcorners pl-2 button nooutline w-100" type="password" id="login-password" required />
+                </div>
+                <button class="btn roundedcorners secondarycolor yellow darken-2 z-depth-0 mt-2" id="button-login">Login</button>
+                <button class="btn roundedcorners secondarycolor mt-2 logged-out" type="submit" data-target="modal-signup" id="signup-button">Sign up</button>
+            </form>
+        </div>
+    </div>
+>>>>>>> dc56fa71f1e982d577ec6f8ada4f61463180d36b
 
 </body>
 
