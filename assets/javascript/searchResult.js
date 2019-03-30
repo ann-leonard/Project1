@@ -90,16 +90,14 @@ function getDetails(id_url){
                 $("#searchresults").append(box)
                 // Load More becomes Edit Search
                 $("#loadmorebttn").html("Edit Search")
-            } 
-            
+            }    
         }
+
         $("#loadmorebttn").on("click", function () {
             renderOptions()
         })
-    
-        
+
         renderOptions() 
         console.log(response)
     });
 }
-

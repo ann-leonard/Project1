@@ -1,3 +1,4 @@
+
 function getUrlParameter(name) {
     name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
     var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
@@ -46,3 +47,52 @@ function getResponse(queryURL){
     })
     
 }
+/*    var selectedingredients = ["2 (30 ounce) jars spaghetti sauce", "2 lbs lean ground beef" , "2 eggs" , "3⁄4 cup dry breadcrumbs", "1⁄4 cup fresh parsley, chopped", "1 garlic clove, minced" , "1⁄2-1 teaspoon salt", "1⁄4 cup parmesan cheese" , "1 lb spaghetti, cooked al dente"]
+        var selectedrecipe = ["Place sauce in a large saucepan and simmer over medium heat" , "In large bowl mix beef, eggs, crumbs, parsley, garlic, salt and Parmesan.", "Shape into 18 meatballs.", "Place meatballs in simmering sauce.", "When sauce returns to a simmer, cover and cook 30-35 minutes (or more!) till cooked through.", "Serve sauce and meatballs over warm spaghetti."]
+        //Attach variable to the website
+        $("#recipeimage").attr("src", selectedRecipeImg)   
+        //Include the ingredients in the html
+        for(var i=0; i < selectedingredients.length; i++){
+            //create a var with <div>
+
+        }
+        for(var i=0; i< selectedrecipe.length; i++){
+            var recipebox = $("<div  class='my-4'>")
+            var topbox =$("<div>")
+            var stepnumber = i+1
+            topbox.append("<div class='step"+stepnumber+" leftfloat secondarycolor subtitlefont'> STEP " + stepnumber +"</div>")
+            topbox.append("<div class='checkbttn' data-value='"+ stepnumber + "'><i class='far rightfloat fa-square secondarycolor'></i></div>")
+            recipebox.append(topbox)
+            recipebox.append("<br>")
+            recipebox.append("<div class='step"+stepnumber+" secondarycolor lineheight my-1 textfont'>" + recipeName + "</div>")
+            $("#recipelist").append(recipebox)
+        }
+    
+    
+      });
+}
+    
+    
+    
+    
+    
+    //ADD THE RECIPE IMAGE TO THE TOP
+    //Variable with the image src
+   
+    $(".checkbttn").on("click", function () {
+        var number = parseInt(($(this).attr("data-value")))
+        console.log (number)
+        console.log (selectedrecipe.length)
+        if (number === selectedrecipe.length){
+        console.log("you did it")
+        window.location.replace("Congratulations.html")
+        }
+        else{
+        var graymachine = "step"+ ($(this).attr("data-value"))
+        console.log(graymachine)
+        $("."+graymachine).removeClass("secondarycolor")
+        $("."+graymachine).addClass("fadedcolor")
+        $(this).empty()
+        $(this).html("<i class='far fa-check-square rightfloat fadedcolor'></i>")
+        }
+        */
