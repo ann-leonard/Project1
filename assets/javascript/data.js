@@ -38,11 +38,19 @@ $(document).ready(function () {
         window.open("html/userAccount.html");
     });
 
+
+    $("#logo").on("click", (e) => {
+        window.open("index.html");
+    })
+
+
+
     $("#logo").on("click", (e) => {
         window.open("index.html");
     })
 
     $("DOMContentLoaded", function () {
+        console.log("hi")
         var modals = $(".modal");
         //initialize the modals
         M.Modal.init(modals);
@@ -158,5 +166,35 @@ $(document).ready(function () {
 
 
     });
+
+    var recipe = {
+        name: "Jim",
+        ings: "rick",
+        directions: "jill"
+    };
+
+    $("#save").on("click", (e) => {
+        console.log("document new recipe")
+        db.collection("recipes").add(recipe).then(function(){
+           
+        });
+    })
+
+
+
+
+    var docData = {
+        img: selectedrecipeimg, 
+        name: selectedrecipename,
+        link: ""
+    };
+
+    $("#saveBtn").on("click", (e) => {
+        db.collection("recipes").add(docData).then(function(){
+           console.log("document written")
+        });
+
+    })
+    
 
 });
