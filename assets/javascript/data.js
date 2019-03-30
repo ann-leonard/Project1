@@ -42,7 +42,10 @@ $(document).ready(function () {
         window.open("index.html");
     })
 
+
+
     $("DOMContentLoaded", function () {
+        console.log("hi")
         var modals = $(".modal");
         //initialize the modals
         M.Modal.init(modals);
@@ -140,23 +143,39 @@ $(document).ready(function () {
             });
         });
 
-        $("#saveBtn").on("click", (e) => {
-            auth.onAuthStateChanged(user => {
-                if (user) {
-                    cred => { 
-                        return db.collection("users").doc(cred.user.uid).set({
-                            selectedrecipeimg: selectedrecipeimg,
-                            selectedrecipename: selectedrecipename.val()
-                        });
-                    };
-                } else {
-                    console.log("please log in")
-                }
-            });
-
-        })
+        
 
 
     });
+
+    var recipe = {
+        name: "Jim",
+        ings: "rick",
+        directions: "jill"
+    };
+
+    $("#save").on("click", (e) => {
+        console.log("document new recipe")
+        db.collection("recipes").add(recipe).then(function(){
+           
+        });
+    })
+
+
+
+
+    var docData = {
+        img: selectedrecipeimg, 
+        name: selectedrecipename,
+        link: ""
+    };
+
+    $("#saveBtn").on("click", (e) => {
+        db.collection("recipes").add(docData).then(function(){
+           console.log("document written")
+        });
+
+    })
+    
 
 });
