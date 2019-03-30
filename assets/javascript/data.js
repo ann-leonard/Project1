@@ -12,20 +12,12 @@ $(document).ready(function () {
     var auth = firebase.auth();
     var db = firebase.firestore();
 
-    //hides & shows log in & log buttons depending on if user is logged in or out
-    const setupUI = (user) => {
-        if (user) {
-            db.collection("users").doc(user.uid).get().then(doc => {
-                $("#account-email").append(user.email);
-            })
+    $("#closeBtn").on("click", (e) => {
+        $(".modal").hide();
+    })
 
-            $(".logged-in").show();
-            $(".logged-out").hide();
-        } else {
-            $(".logged-in").hide();
-            $(".logged-out").show();
-        }
-    }
+    //hides & shows log in & log buttons depending on if user is logged in or out
+
 
     //setup guides from firebase, pulling information
     var setupGuides = (data) => {
@@ -41,12 +33,33 @@ $(document).ready(function () {
         }
     }
 
+    //click on username when logged in, go to account page
+    $("#accountBtn").on("click", (e) => {
+        window.open("html/userAccount.html");
+    });
 
+    $("#logo").on("click", (e) => {
+        window.open("index.html");
+    })
 
     $("DOMContentLoaded", function () {
         var modals = $(".modal");
         //initialize the modals
         M.Modal.init(modals);
+
+        const setupUI = (user) => {
+            if (user) {
+                db.collection("users").doc(user.uid).get().then(doc => {
+                    $("#accountBtn").append(user.email);
+                })
+    
+                $(".logged-in").show();
+                $(".logged-out").hide();
+            } else {
+                $(".logged-in").hide();
+                $(".logged-out").show();
+            }
+        }
 
         //checking to see if the user is logged in or not then displaying guides if they are
         auth.onAuthStateChanged(user => {
@@ -82,8 +95,7 @@ $(document).ready(function () {
             auth.createUserWithEmailAndPassword(email, password).then(cred => {
                 return db.collection("users").doc(cred.user.uid).set({
                     name: $("#name").val(), 
-                    age: $("#age").val(),
-                    favfood: 
+                    age: $("#age").val()
                 });
             });
 
@@ -105,7 +117,6 @@ $(document).ready(function () {
         });
 
         // login
-        var loginForm = $("#login-form");
         $("#button-login").on("click", (e) => {
             e.preventDefault();
 
@@ -128,6 +139,23 @@ $(document).ready(function () {
                 myFunction()
             });
         });
+
+        $("#saveBtn").on("click", (e) => {
+            auth.onAuthStateChanged(user => {
+                if (user) {
+                    cred => { 
+                        return db.collection("users").doc(cred.user.uid).set({
+                            selectedrecipeimg: selectedrecipeimg,
+                            selectedrecipename: selectedrecipename.val()
+                        });
+                    };
+                } else {
+                    console.log("please log in")
+                }
+            });
+
+        })
+
 
     });
 
