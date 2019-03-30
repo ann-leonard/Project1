@@ -38,11 +38,16 @@ $(document).ready(function () {
         window.open("html/userAccount.html");
     });
 
+
     $("#logo").on("click", (e) => {
         window.open("index.html");
     })
 
 
+
+    $("#logo").on("click", (e) => {
+        window.open("index.html");
+    })
 
     $("DOMContentLoaded", function () {
         console.log("hi")
@@ -143,7 +148,21 @@ $(document).ready(function () {
             });
         });
 
-        
+        $("#saveBtn").on("click", (e) => {
+            auth.onAuthStateChanged(user => {
+                if (user) {
+                    cred => { 
+                        return db.collection("users").doc(cred.user.uid).set({
+                            selectedrecipeimg: selectedrecipeimg,
+                            selectedrecipename: selectedrecipename.val()
+                        });
+                    };
+                } else {
+                    console.log("please log in")
+                }
+            });
+
+        })
 
 
     });
