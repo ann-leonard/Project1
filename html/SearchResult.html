@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="../assets/css/searchresultsstyle.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.typekit.net/pqy5rcu.css">
+    <link rel="stylesheet" type="text/css" href="../assets/CSS/searchresultsstyle.css">
+
     <title>sousChef-RecipeSearch</title>
 
     <!-- Javascript link -->
@@ -47,11 +49,10 @@
                 <button
                     class="btn whitebg roundedcorners secondarycolor border-0 my-4 my-sm-0 modal-trigger logged-out titlefont"
                     type="submit" id="signup-button">Sign Up</button>
-
             </form>
         </div>
     </nav>
-    <img class="cookingimg" src="../assets/images/cookingimage.jpg" alt="Image">
+    <img class="cookingimg" src="../assets/Images/cookingimage.jpg" alt="Image">
     <div class="bar maincolor"> </div>
     <div class="container my-4 mwidth">
         <div id="searchresults" class="row">
@@ -59,7 +60,7 @@
             </div>
         </div>
     </div>
-    <div id="loadmorebttn" class="secondarycolor roundedcorners text-center my-4 p-1 mx-auto titlefont bg-light"></div>
+    <div id="loadmorebttn" class="secondarycolor roundedcorners text-center my-4 p-1 mx-auto titlefont bg-light muli"></div>
 
 
     <div id="modal-login" class="modal">
@@ -85,7 +86,76 @@
                     data-target="modal-signup" id="signup-button">Sign up</button>
             </form>
         </div>
+    </div> -->
+
+    <div id="modal-login" class="modal">
+            <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" id="closeBtn">&times;</button>
+                </div>
+            <div class="modal-content col-md-5 mt-3 rightfloat maincolor roundedcorners p-3 border-0 mr-2 mt-4">
+                <form id="login-form">
+                    <div class="input-field">
+                        <label class="textfont whitefont titlefont mb-0 muli" for="login-email"> Email Address</label>                    
+                        <input class="border-0 roundedcorners pl-2 button nooutline w-100" type="email" id="login-email" required />
+                    </div>
+                    <div class="input-field">
+                        <label class="textfont whitefont titlefont mb-0 muli" for="login-password">Password</label>                 
+                        <input class="border-0 roundedcorners pl-2 button nooutline w-100" type="password" id="login-password" required />
+                    </div>
+                    <button class="btn roundedcorners secondarycolor yellow darken-2 z-depth-0 mt-2 muli" id="button-login">Login</button>
+                    <button class="btn roundedcorners secondarycolor mt-2 logged-out muli" type="submit" data-target="modal-signup" id="signup-button">Sign up</button>
+                </form>
+            </div>
+        </div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+    var moreoptions = true
+    var recipename = "Spaghetti and Meatballs"
+    var recipeimg = "src=../assets/Images/Spghetti&Meatballs.jpg"
+    var recipedes = "Spaghetti with meatballs is an Italian-American dish consisting of spaghetti, tomato sauce and meatballs"
+    function renderoptions(){
+        if (moreoptions === true){
+            for(var i = 0; i< 6; i++){
+                //CREATE RECIPE DIVS AND PUSH TO HTML IN ORDER
+                //Create the outer div
+                var box = $("<div class='roundedcorners box m-3 p-2 bg-light mx-auto'>")
+                console.log(box)
+                //Create and append the title div
+                var title =$("<div class='secondarycolor buttonfont mt-1 muli'>" + recipename + "</div>")
+                box.append(title)
+                //Append the image to the box
+                box.append("<img class='resultimg mt-1'" + recipeimg + ">");
+                //Create and append the description
+                var description =$("<div class='secondarycolor recipedescription mt-1 muli'>" + recipedes + "</div>")
+                box.append(description)
+                //Append the Save and Cook Buttons
+                box.append("<div class='my-1 d-flex justify-content-around'><button class='border-0 bg-light secondarycolor muli'>SAVE</button> <a class='navbar-brand' href='recipe.html'><button class='border-0 bg-light secondarycolor muli'>COOK</button></a></div>")
+                //Append box to HTML
+                $("#searchresults").append(box)
+                //Add the LoadMore Button
+                $("#loadmorebttn").html("Load More")
+                moreoptions = false
+            }
+        }
+        else{
+            //Create a box with the no more options available
+            var box = $("<div class='roundedcorners secondarycolor titilefont mt-3 mb-0 p-2 bg-light mx-auto'> We apologize there are no more options available </div>")
+            // Append box
+            $("#searchresults").append(box)
+            // Load More becomes Edit Search
+            $("#loadmorebttn").html("Edit Search")
+        }    
+    }
+
+    $("#loadmorebttn").on("click", function () {
+        renderoptions()
+    })
+
+    renderoptions()
     </div>
+
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="../assets/javascript/searchResult.js"></script>

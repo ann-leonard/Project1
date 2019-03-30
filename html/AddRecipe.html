@@ -1,38 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Add Recipe</title>
 
-  <link href="../assets/CSS/AddRecipe.css" type="text/css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.typekit.net/pqy5rcu.css">
+  <link href="assets/CSS/AddRecipe.css" type="text/css" rel="stylesheet">
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-  <!-- Javascript link -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-
-  <!-- Firebase Links -->
-  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
-  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script>
-  <script type="text/javascript" src="../assets/javascript/data.js"></script>
 </head>
-
 <body>
-
   <nav id="maincolor" class="navbar">
 
     <a class="navbar-brand" href="#" id="logo">
@@ -48,21 +28,45 @@
         width="65px" height="65px" />
     </div>
   </nav>
-
-  <div id="mainContent" class="container">
-    <form>
-      <div class="form-group">
-        <label for="exampleFormControlInput1 text-warning">
-          <p class="text-warning mt-3 mb-0">Recipe Name</p>
-        </label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=".....">
+  <div class="container">
+    <div class="row">
+      
+      <div id="mainContent" class="col-md-6 col-sm-12">
+        <form>
+          <div class="form-group">
+            <label for="exampleFormControlInput1 text-warning titlefont muli">
+              <p class="text-warning mt-3 mb-0 titlefont muli">Recipe Name</p>
+            </label>
+            <input type="text" class="roundedcorners pl-2 border-0 bg-light secondarycolor w-100 py-1" id="recipeNameInput" placeholder="">
+            <button id="addnameBtn" type="button" class="bg-light secondarycolor border-0 roundedcorners muli px-2 buttonfont mt-1">Add</button>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1 text-warning">
+              <p class="text-warning mt-3 mb-0 muli titlefont">Ingredients (add one at the time)</p>
+            </label>
+            <input type="text" class="roundedcorners pl-2 border-0 bg-light secondarycolor w-100 py-1" id="ingridientsInput" placeholder="">
+            <button id="addIngrBtn" type="button" class="bg-light secondarycolor border-0 roundedcorners muli px-2 buttonfont mt-1">Add</button>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">
+              <p class="text-warning mb-0 mt-3 muli titlefont">Next Step</p>
+            </label>
+            <textarea class="roundedcorners pl-2 border-0 bg-light secondarycolor w-100 py-1" id="stepInput" rows="3"></textarea>
+            <button id="addStepBtn" type="button" class="bg-light secondarycolor border-0 roundedcorners muli px-2 buttonfont mt-1">Add Step</button>
+          </div>
+        </form>
+        <button id="startCooking" type="button" class="bg-light secondarycolor border-0 roundedcorners muli px-3 buttonfont mt-1 text-warning">Start Cooking</button>
+        <button id="uploadMore" type="button" class="bg-light secondarycolor border-0 roundedcorners muli px-3 buttonfont mt-1 text-warning">Upload More</button>
       </div>
 
-      <div class="form-group">
-        <label for="exampleFormControlTextarea1">
-          <p class="text-warning mb-0">Step 1</p>
-        </label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      <div class="col-md-6 col-sm-12 mt-4 roundedcorners bg-light">
+          <div id="nameDisplay" class="row mt-3 ml-1">
+          </div>
+          <div id="ingrsDisplay" class="row mt-3 ml-1">
+          </div>
+          <h1 id="recipeNameDisplay" class="row mt-3 text-center"></h1>
+          <div id="stepsDisplay" class="card-body">
+          </div>
       </div>
     </form>
   </div>
@@ -92,7 +96,69 @@
             </form>
         </div>
     </div>
+  </div>
+  <div id="footerHome" class="fixed-bottom bg-secondary col-12"></div>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script>
+    var x = 1
+    var ingridientsArray = [];
+    var stepsListArray = [];
+    var recipeNameArray = [];
+    // Capture Button Click
+    $("#addStepBtn").on("click", function (event) {
+      // prevent form from trying to submit/refresh the page
+      event.preventDefault();
+      // Capture User Inputs and store them into variables
+      var recipeName = $("#recipeNameInput").val().trim();
+      recipeNameArray.push(recipeName);
+      $("#recipeNameDisplay").text(recipeName);
+      var stepsList = $('#stepInput').val().trim();
+      console.log(stepsListArray);
+      stepsListArray.push(stepsList);
+      $('#stepsDisplay').append("<p class='secondarycolor mb-1 roundedcornersborder-0'> STEP " + x + "</p> <p class='secondarycolor roundedcorners border-0'>" + stepsList + "</p>");
+      x++
+      $('#stepInput').val('')
+    });
+    // function removeButton (){
+    //   var btnToRemove = $(document).
+    // }
+    // function removeItem(item){
+    // var itemToRemove = document.getElementById(item);
+    // itemToRemove.parentNode.removeChild(itemToRemove);
+    // }
+    // ===== this code creates buttons with ingridient name and appends into html
+    $('#addIngrBtn').on('click', function () {
+      var ingridients = $("#ingridientsInput").val().trim();
+      ingridientsArray.push(ingridients);
+      var removeBtn = $('<button class="rmBtn buttoncolor secondarycolor roundedcorners my-2 px-2 mx-2 border-0">remove</button>');
+      removeBtn.attr("data-name", ingridients);
+      removeBtn.text(ingridients);
+      // for (i = 0; i < ingridientsArray.length; i++){}
+      // removeBtn.text(ingridients)
+      $("#ingrsDisplay").append(removeBtn);
+      console.log(ingridientsArray);
+      $('#ingridientsInput').val('')
+    });
 
+    $('#addnameBtn').on('click', function () {
+      var newname = $("#recipeNameInput").val().trim();
+      $('#nameDisplay').html("<p class='secondarycolor roundedcorners px-2 border-0 titlefont'>" + newname + "</p>");
+      $('#recipeNameInput').val('')
+    });
+    // var aaa;
+   
+    // $(document).on('click', '.rmBtn', function () {
+    // aaa = $(this).attr('data-name');
+      
+    // console.log(aaa);
+      
+    // $('<button>').remove(aaa);
+    // });
+    $('.rmBtn').click(function(){
+      $('.rmBtn').remove();
+    })
+  </script>
 </body>
-
 </html>

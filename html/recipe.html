@@ -7,9 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="../assets/css/recipestyle.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.typekit.net/pqy5rcu.css">
+    <link rel="stylesheet" type="text/css" href="../assets/CSS/recipestyle.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
     <title>sousChef-RecipeSearch</title>
 
     <!-- Javascript link -->
@@ -51,25 +52,25 @@
                 <button
                     class="btn whitebg roundedcorners secondarycolor border-0 my-4 my-sm-0 modal-trigger logged-out titlefont"
                     type="submit" id="signup-button">Sign Up</button>
-
             </form>
         </div>
     </nav>
 
     <div class="image">
         <img id="recipeimage" class="recipeimg" alt="Image">
-        <div id="recipename" class="recipename roundedcorners bg-light titlefont secondarycolor p-2 mw-75"> </div>
 
+        <div id="recipename" class="recipename roundedcorners bg-light titlefont secondarycolor p-2 mw-75 muli"> </div>
+  </div>
     <div class="bar maincolor"> </div>
     <div class="container p-1 mt-4">
         <div class="row">
-            <div class="col-12 secondarycolor titlefont">INGREDIENTS</div>
+            <div class="col-12 secondarycolor titlefont muli">INGREDIENTS</div>
         </div>
         <div class="row">
             <div id="ingredientslist" class="col-12"></div>
         </div>
         <div class="row mt-4">
-            <div class="col-12 secondarycolor titlefont">RECIPE</div>
+            <div class="col-12 secondarycolor titlefont muli">RECIPE</div>
         </div>
         <div class="row">
             <div id="recipelist" class="col-12"></div>
@@ -100,6 +101,67 @@
                     data-target="modal-signup" id="signup-button">Sign up</button>
             </form>
         </div>
+    </div> 
+
+    <div id="modal-login" class="modal">
+            <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" id="closeBtn">&times;</button>
+                </div>
+            <div class="modal-content col-md-5 mt-3 rightfloat maincolor roundedcorners p-3 border-0 mr-2 mt-4">
+                <form id="login-form">
+                    <div class="input-field">
+                        <label class="textfont whitefont titlefont mb-0 muli" for="login-email"> Email Address</label>                    
+                        <input class="border-0 roundedcorners pl-2 button nooutline w-100" type="email" id="login-email" required />
+                    </div>
+                    <div class="input-field">
+                        <label class="textfont whitefont titlefont mb-0 muli" for="login-password">Password</label>                 
+                        <input class="border-0 roundedcorners pl-2 button nooutline w-100" type="password" id="login-password" required />
+                    </div>
+                    <button class="btn roundedcorners secondarycolor yellow darken-2 z-depth-0 mt-2 muli" id="button-login">Login</button>
+                    <button class="btn roundedcorners secondarycolor mt-2 logged-out muli" type="submit" data-target="modal-signup" id="signup-button">Sign up</button>
+                </form>
+            </div>
+        </div>
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+    //ADD THE RECIPE IMAGE TO THE TOP
+    //Variable with the image src
+    var selectedrecipeimg = "../assets/Images/Spghetti&Meatballs.jpg"
+    var selectedrecipename = "Spaghetti with Meatballs"
+    var selectedingredients = ["2 (30 ounce) jars spaghetti sauce", "2 lbs lean ground beef" , "2 eggs" , "3⁄4 cup dry breadcrumbs", "1⁄4 cup fresh parsley, chopped", "1 garlic clove, minced" , "1⁄2-1 teaspoon salt", "1⁄4 cup parmesan cheese" , "1 lb spaghetti, cooked al dente"]
+    var selectedrecipe = ["Place sauce in a large saucepan and simmer over medium heat" , "In large bowl mix beef, eggs, crumbs, parsley, garlic, salt and Parmesan.", "Shape into 18 meatballs.", "Place meatballs in simmering sauce.", "When sauce returns to a simmer, cover and cook 30-35 minutes (or more!) till cooked through.", "Serve sauce and meatballs over warm spaghetti."]
+    //Attach variable to the website
+    $("#recipeimage").attr("src", selectedrecipeimg)   
+    $("#recipename").html(selectedrecipename)
+    //Include the ingredients in the html
+    for(var i=0; i < selectedingredients.length; i++){
+        //create a var with <div>
+        var ingredientbox = $("<button class='buttoncolor secondarycolor roundedcorners px-3 py-1 border-0 m-1 muli'>" + selectedingredients[i] + "</button>")
+        console.log (ingredientbox)
+        $("#ingredientslist").append(ingredientbox)
+    }
+    for(var i=0; i< selectedrecipe.length; i++){
+        var recipebox = $("<div  class='my-4'>")
+        var topbox =$("<div>")
+        var stepnumber = i+1
+        topbox.append("<div class='step"+stepnumber+" leftfloat secondarycolor subtitlefont muli'> STEP " + stepnumber +"</div>")
+        topbox.append("<div class='checkbttn' data-value='"+ stepnumber + "'><i class='far rightfloat fa-square secondarycolor'></i></div>")
+        recipebox.append(topbox)
+        recipebox.append("<br>")
+        recipebox.append("<div class='step"+stepnumber+" secondarycolor lineheight my-1 textfont muli'>" + selectedrecipe[i] + "</div>")
+        $("#recipelist").append(recipebox)
+    }
+
+
+    $(".checkbttn").on("click", function () {
+        var number = parseInt(($(this).attr("data-value")))
+        console.log (number)
+        console.log (selectedrecipe.length)
+        if (number === selectedrecipe.length){
+        console.log("you did it")
+        window.location.replace("Congratulations.html")
     </div>
 
 
