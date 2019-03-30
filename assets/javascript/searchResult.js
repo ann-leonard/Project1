@@ -36,3 +36,45 @@ function getDetails(id_url){
          
     });
 }
+
+    var moreoptions = true
+    var recipename = "Spaghetti and Meatballs"
+    var recipeimg = "src=../assets/Images/Spghetti&Meatballs.jpg"
+    var recipedes = "Spaghetti with meatballs is an Italian-American dish consisting of spaghetti, tomato sauce and meatballs"
+    function renderoptions(){
+        if (moreoptions === true){
+            for(var i = 0; i< 6; i++){
+                //CREATE RECIPE DIVS AND PUSH TO HTML IN ORDER
+                //Create the outer div
+                var box = $("<div class='roundedcorners box m-3 p-2 bg-light mx-auto'>")
+                console.log(box)
+                //Create and append the title div
+                var title =$("<div class='secondarycolor buttonfont mt-1 muli'>" + recipename + "</div>")
+                box.append(title)
+                //Append the image to the box
+                box.append("<img class='resultimg mt-1'" + recipeimg + ">");
+                //Create and append the description
+                var description =$("<div class='secondarycolor recipedescription mt-1 muli'>" + recipedes + "</div>")
+                box.append(description)
+                //Append the Save and Cook Buttons
+                box.append("<div class='my-1 d-flex justify-content-around'><button class='border-0 bg-light secondarycolor muli buttonfont roundedcorners'>SAVE</button> <a href='recipe.html'><button class='border-0 bg-light secondarycolor muli buttonfont blueline roundedcorners'>COOK</button></a></div>")
+                //Append box to HTML
+                $("#searchresults").append(box)
+                //Add the LoadMore Button
+                $("#loadmorebttn").html("Load More")
+                moreoptions = false
+            }
+        }
+        else{
+            //Create a box with the no more options available
+            var box = $("<div class='roundedcorners secondarycolor titilefont mt-3 mb-0 p-2 bg-light mx-auto'> We apologize there are no more options available </div>")
+            // Append box
+            $("#searchresults").append(box)
+            // Load More becomes Edit Search
+            $("#loadmorebttn").html("Edit Search")
+        }    
+    }
+    $("#loadmorebttn").on("click", function () {
+        renderoptions()
+    })
+    renderoptions()
