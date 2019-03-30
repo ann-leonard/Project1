@@ -92,13 +92,12 @@ function getDetails(id_url){
                 $("#loadmorebttn").html("Edit Search")
             }    
         }
+
         $("#loadmorebttn").on("click", function () {
             renderOptions()
         })
-    
+
         renderOptions() 
         console.log(response)
     });
 }
-
-
