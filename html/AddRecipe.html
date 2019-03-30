@@ -5,18 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Add Recipe</title>
+
   <link rel="stylesheet" href="https://use.typekit.net/pqy5rcu.css">
   <link href="assets/CSS/AddRecipe.css" type="text/css" rel="stylesheet">
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
   <nav id="maincolor" class="navbar">
-    <a class="navbar-brand" href="../index.html">
-      <img class="logoimage ml-0" src=../assets/Images/SousChef(templogo).png alt="logo"></a>
+
+    <a class="navbar-brand" href="#" id="logo">
+      <img class="logoimage ml-0" src=../assets/Images/SousChef(templogo).png alt="logo" ></a>
     <div class="row">
-      <a id="accountBtn" class="btn btn-lg mt-2 muli" href="#">Account</a>
-      <a id="usernameBtn" class="btn btn-lg mt-2 muli" href="#">Username</a>
+
+      <a id="accountBtn" class="btn  btn-lg mt-2 logged-in" href="#"></a>
+      <button class="btn whitebg roundedcorners secondarycolor border-0 my-4 my-sm-0 modal-trigger logged-out titlefont" type="submit"
+      data-target="modal-login">Sign in</button>
+      <button class="btn whitebg roundedcorners secondarycolor border-0 my-4 my-sm-0 modal-trigger logged-out titlefont" type="submit" id="signup-button">Sign Up</button>
+
       <img class="userImg mr-3" src="../assets/images/homePageImages/silly-cartoon-face-md.png" alt="user picture"
         width="65px" height="65px" />
     </div>
@@ -61,7 +68,33 @@
           <div id="stepsDisplay" class="card-body">
           </div>
       </div>
+    </form>
+  </div>
 
+  <div id="footerHome" class="fixed-bottom bg-secondary"></div>
+
+
+    <div id="modal-login" class="modal">
+
+        <div class="modal-content col-md-5 mt-3 floatright maincolor roundedcorners p-3 border-0 mr-2 mt-4">
+            <form id="login-form">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" id="closeBtn">&times;</button>
+                </div>
+
+                <div class="input-field">
+                    <label class="textfont whitefont titlefont mb-0" for="login-email"> Email Address</label>                    
+                    <input class="border-0 roundedcorners pl-2 button nooutline w-100" type="email" id="login-email" required />
+                </div>
+                <div class="input-field">
+                    <label class="textfont whitefont titlefont mb-0" for="login-password">Password</label>                 
+                    <input class="border-0 roundedcorners pl-2 button nooutline w-100" type="password" id="login-password" required />
+                </div>
+                <button class="btn roundedcorners secondarycolor yellow darken-2 z-depth-0 mt-2" id="button-login">Login</button>
+                <button class="btn roundedcorners secondarycolor mt-2 logged-out" type="submit" data-target="modal-signup" id="signup-button">Sign up</button>
+            </form>
+        </div>
     </div>
   </div>
   <div id="footerHome" class="fixed-bottom bg-secondary col-12"></div>
