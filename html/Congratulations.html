@@ -108,12 +108,17 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript">
 
-var selectedrecipeimg = "../assets/images/Spghetti&Meatballs.jpg"
-var selectedrecipename = "Spaghetti with Meatballs"
 
-$("#recipeimage").attr("src", selectedrecipeimg)   
-$("#recipename").html(selectedrecipename)
+function getUrlParameter(name) {
+    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+    var results = regex.exec(location.search);
+    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+};
+var mealName = getUrlParameter("name")
 
-</script>
+console.log(mealImg)
+    
+    </script>
 </body>
 </html>

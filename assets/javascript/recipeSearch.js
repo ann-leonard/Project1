@@ -129,8 +129,6 @@
    
 
         
-       // getResponse(queryURL)
-      //  $("#userInput").val("")
-     //   return userInput, queryURL
+
     }
 

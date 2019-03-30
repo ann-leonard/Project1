@@ -60,7 +60,7 @@
 button:focus {
     outline:0;}
 
-.resultimg{
+.resulting{
     width:100%;
     max-height: 125px;
     object-fit:none;
