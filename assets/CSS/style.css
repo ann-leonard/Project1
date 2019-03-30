@@ -89,7 +89,12 @@
 }
 
 .titlefont{
-    font-size: 22px
+    font-size: 22px;
+    font-family: muli, sans-serif;
+}
+
+.titlefontmuli{
+    font-family: muli, sans-serif;
 }
 
 .listbuttons{

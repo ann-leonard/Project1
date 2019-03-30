@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SousChef - User account info..</title>
+    <link rel="stylesheet" href="https://use.typekit.net/pqy5rcu.css">
     <link href="../assets/CSS/userAccount.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -36,29 +37,33 @@
             <img class="logoimage ml-0" src=../assets/Images/SousChef(templogo).png alt="logo"></a>
         <div class="row">
 
-            <a id="accountBtn" class="btn  btn-lg mt-2" href="#">Account</a>
-            <a id="usernameBtn" class="btn  btn-lg mt-2" href="#">Username</a>
+            <a id="accountBtn" class="btn  btn-lg mt-2 logged-in" href="#"></a>
+            <button class="btn whitebg roundedcorners secondarycolor border-0 my-4 my-sm-0 modal-trigger logged-out titlefont" type="submit"
+            data-target="modal-login">Sign in</button>
+            <button class="btn whitebg roundedcorners secondarycolor border-0 my-4 my-sm-0 modal-trigger logged-out titlefont" type="submit" id="signup-button">Sign Up</button>
+
             <img class="userImg mr-3" src="../assets/images/homePageImages/silly-cartoon-face-md.png" alt="user picture"
+
                 width="65px" height="65px" />
         </div>
     </nav>
 
 
     <div class="card-body">
-        <h5 class="card-title ml-1">Your Favorites</h5>
+        <h5 class="card-title ml-1 muli">Your Favorites</h5>
     </div>
 
     <div id="mainContent" class="container">
 
 
 
-         <div class="d-inline-block"><img class="yourFavImg" src="../assets/images/homePageImages/dummy1.jpg" alt="picture of a favorite meal" /><p class="text-center text-warning">Tasty meat balls</p></div>
-         <div class="d-inline-block"><img class="yourFavImg" src="../assets/images/homePageImages/dummy2.jpg" alt="picture of a favorite meal" /><p class="text-center text-warning">Tasty meat balls</p></div>
-         <div class="d-inline-block"><img class="yourFavImg" src="../assets/images/homePageImages/dummy3.jpg" alt="picture of a favorite meal" /><p class="text-center text-warning">Tasty meat balls</p></div>
-         <div class="d-inline-block"><img class="yourFavImg" src="../assets/images/homePageImages/dummy4.jpg" alt="picture of a favorite meal" /><p class="text-center text-warning">Tasty meat balls</p></div> 
-         <div class="d-inline-block"><img class="yourFavImg" src="../assets/images/homePageImages/dummy5.jpg" alt="picture of a favorite meal" /><p class="text-center text-warning">Tasty meat balls</p></div> 
-         <div class="d-inline-block"><img class="yourFavImg" src="../assets/images/homePageImages/dummy6.jpg" alt="picture of a favorite meal" /><p class="text-center text-warning">Tasty meat balls</p></div> 
-         <div class="d-inline-block"><img class="yourFavImg" src="../assets/images/homePageImages/dummy7.jpg" alt="picture of a favorite meal" /><p class="text-center text-warning">Tasty meat balls</p></div> 
+         <div class="d-inline-block"><img class="yourFavImg muli" src="../assets/Images/homePageImages/dummy1.jpg" alt="picture of a favorite meal" /><p class="text-center text-warning">Tasty meat balls</p></div>
+         <div class="d-inline-block"><img class="yourFavImg muli" src="../assets/Images/homePageImages/dummy2.jpg" alt="picture of a favorite meal" /><p class="text-center text-warning">Tasty meat balls</p></div>
+         <div class="d-inline-block"><img class="yourFavImg muli" src="../assets/Images/homePageImages/dummy3.jpg" alt="picture of a favorite meal" /><p class="text-center text-warning">Tasty meat balls</p></div>
+         <div class="d-inline-block"><img class="yourFavImg muli" src="../assets/Images/homePageImages/dummy4.jpg" alt="picture of a favorite meal" /><p class="text-center text-warning">Tasty meat balls</p></div> 
+         <div class="d-inline-block"><img class="yourFavImg muli" src="../assets/Images/homePageImages/dummy5.jpg" alt="picture of a favorite meal" /><p class="text-center text-warning">Tasty meat balls</p></div> 
+         <div class="d-inline-block"><img class="yourFavImg muli" src="../assets/Images/homePageImages/dummy6.jpg" alt="picture of a favorite meal" /><p class="text-center text-warning">Tasty meat balls</p></div> 
+         <div class="d-inline-block"><img class="yourFavImg muli" src="../assets/Images/homePageImages/dummy7.jpg" alt="picture of a favorite meal" /><p class="text-center text-warning">Tasty meat balls</p></div> 
        
 
 
@@ -68,7 +73,7 @@
 
     </div>
     <div id="lastDiv" class="container text-center">
-        <a id="uploadMoreBtn" href="AddRecipe.html" class="btn bg-light btn-lg">Upload More</a>
+        <a id="uploadMoreBtn" href="AddRecipe.html" class="btn bg-light btn-lg muli">Upload More</a>
     </div>
 
     <div id="footerHome" class="fixed-bottom bg-secondary"></div>

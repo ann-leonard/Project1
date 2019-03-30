@@ -12,9 +12,11 @@
     font-size: 23px;
 }
 
+.muli{
+    font-family: muli, sans-serif;
+}
 
 #accountBtn, #usernameBtn {
-
     color:white;
 }
 
