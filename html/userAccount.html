@@ -6,21 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SousChef - User account info..</title>
-    <link href="assets/CSS/userAccount.css" type="text/css" rel="stylesheet">
+    <link href="../assets/CSS/userAccount.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+      <!-- Javascript link -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+  crossorigin="anonymous"></script>
+
+<!-- Firebase Links -->
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+<script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script>
+<script type="text/javascript" src="../assets/javascript/data.js"></script>
 </head>
 
 <body>
 
     <nav id="maincolor" class="navbar">
-        <a class="navbar-brand" href="#">
-            <img class="logoimage ml-0" src=assets/Images/SousChef(templogo).png alt="logo"></a>
+        <a class="navbar-brand" href="../index.html">
+            <img class="logoimage ml-0" src=../assets/Images/SousChef(templogo).png alt="logo"></a>
         <div class="row">
 
-            <a id="accountBtn" class="btn  btn-lg mt-2" href="#">Account</a>
-            <a id="usernameBtn" class="btn  btn-lg mt-2" href="#">Username</a>
-            <img class="userImg mr-3" src="assets/images/homePageImages/silly-cartoon-face-md.png" alt="user picture"
+            <a id="accountBtn" class="btn  btn-lg mt-2 logged-in" href="#"></a>
+            <button class="btn whitebg roundedcorners secondarycolor border-0 my-4 my-sm-0 modal-trigger logged-out titlefont" type="submit"
+            data-target="modal-login">Sign in</button>
+            <button class="btn whitebg roundedcorners secondarycolor border-0 my-4 my-sm-0 modal-trigger logged-out titlefont" type="submit" id="signup-button">Sign Up</button>
+            <img class="userImg mr-3" src="../assets/images/homePageImages/silly-cartoon-face-md.png" alt="user picture"
                 width="65px" height="65px" />
         </div>
     </nav>
@@ -34,13 +54,13 @@
 
 
 
-         <div class="d-inline-block"><img class="yourFavImg" src="assets/images/homePageImages/dummy1.jpg" alt="picture of a favorite meal" /><p class="text-center text-warning">Tasty meat balls</p></div>
-         <div class="d-inline-block"><img class="yourFavImg" src="assets/images/homePageImages/dummy2.jpg" alt="picture of a favorite meal" /><p class="text-center text-warning">Tasty meat balls</p></div>
-         <div class="d-inline-block"><img class="yourFavImg" src="assets/images/homePageImages/dummy3.jpg" alt="picture of a favorite meal" /><p class="text-center text-warning">Tasty meat balls</p></div>
-         <div class="d-inline-block"><img class="yourFavImg" src="assets/images/homePageImages/dummy4.jpg" alt="picture of a favorite meal" /><p class="text-center text-warning">Tasty meat balls</p></div> 
-         <div class="d-inline-block"><img class="yourFavImg" src="assets/images/homePageImages/dummy5.jpg" alt="picture of a favorite meal" /><p class="text-center text-warning">Tasty meat balls</p></div> 
-         <div class="d-inline-block"><img class="yourFavImg" src="assets/images/homePageImages/dummy6.jpg" alt="picture of a favorite meal" /><p class="text-center text-warning">Tasty meat balls</p></div> 
-         <div class="d-inline-block"><img class="yourFavImg" src="assets/images/homePageImages/dummy7.jpg" alt="picture of a favorite meal" /><p class="text-center text-warning">Tasty meat balls</p></div> 
+         <div class="d-inline-block"><img class="yourFavImg" src="../assets/images/homePageImages/dummy1.jpg" alt="picture of a favorite meal" /><p class="text-center text-warning">Tasty meat balls</p></div>
+         <div class="d-inline-block"><img class="yourFavImg" src="../assets/images/homePageImages/dummy2.jpg" alt="picture of a favorite meal" /><p class="text-center text-warning">Tasty meat balls</p></div>
+         <div class="d-inline-block"><img class="yourFavImg" src="../assets/images/homePageImages/dummy3.jpg" alt="picture of a favorite meal" /><p class="text-center text-warning">Tasty meat balls</p></div>
+         <div class="d-inline-block"><img class="yourFavImg" src="../assets/images/homePageImages/dummy4.jpg" alt="picture of a favorite meal" /><p class="text-center text-warning">Tasty meat balls</p></div> 
+         <div class="d-inline-block"><img class="yourFavImg" src="../assets/images/homePageImages/dummy5.jpg" alt="picture of a favorite meal" /><p class="text-center text-warning">Tasty meat balls</p></div> 
+         <div class="d-inline-block"><img class="yourFavImg" src="../assets/images/homePageImages/dummy6.jpg" alt="picture of a favorite meal" /><p class="text-center text-warning">Tasty meat balls</p></div> 
+         <div class="d-inline-block"><img class="yourFavImg" src="../assets/images/homePageImages/dummy7.jpg" alt="picture of a favorite meal" /><p class="text-center text-warning">Tasty meat balls</p></div> 
        
 
 
