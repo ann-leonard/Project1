@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../assets/css/congratulations.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>sousChef-RecipeSearch</title>
+
+    <!-- Javascript link -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+
+    <!-- Firebase Links -->
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script>
+    <script type="text/javascript" src="../assets/javascript/data.js"></script>
+
+</head>
+
+<body>
+    <!-- <nav class="navbar maincolor py-4"> -->
+    <!-- <a class="navbar-brand" href="#"><img class="logoimage" src=../assets/Images/SousChef(templogo).png alt="logo"> -->
+    <!-- </a> -->
+    <!-- </nav> -->
+    <nav id="maincolor" class="navbar">
+        <a class="navbar-brand" href="../index.html">
+            <img class="logoimage" src=../assets/Images/SousChef(templogo).png alt="logo">
+        </a>
+        <div class="row mr-1">
+            <form class="form-inline">
+                <a id="accountBtn" class="btn  btn-lg mt-2 logged-in" href="#"></a>
+                <button
+                    class="btn whitebg roundedcorners secondarycolor border-0 my-4 my-sm-0 modal-trigger logged-out titlefont"
+                    type="submit" data-target="modal-login">Sign in</button>
+                <button
+                    class="btn whitebg roundedcorners secondarycolor border-0 my-4 my-sm-0 modal-trigger logged-out titlefont"
+                    type="submit" id="signup-button">Sign Up</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="image">
+        <img id="recipeimage" class="recipeimg" alt="Image">
+        <div id="recipename" class="recipename roundedcorners bg-light titlefont secondarycolor p-2 mw-75"> </div>
+    </div>
+    <div class="bar maincolor"> </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mt-5 secondarycolor Congratsfont text-center">
+                CONGRATS! YOU DID IT!
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 mt-4 p-2 text-center">
+                <a id="saveBtn" class="contents py-2 px-3 secondarycolor rightfloat mr-5 buttoncolor roundedcorners titlefont"> SAVE</a>
+            </div>
+            <div class="col-6 mt-4 p-2 text-center">
+                <a class="contents py-2 px-3 secondarycolor leftfloat ml-5 buttoncolor roundedcorners titlefont"
+                    href="../index.html">HOME</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="modal-login" class="modal">
+
+        <div class="modal-content col-md-5 mt-3 rightfloat maincolor roundedcorners p-3 border-0 mr-2 mt-4">
+            <form id="login-form">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" id="closeBtn">&times;</button>
+                </div>
+                <div class="input-field">
+                    <label class="textfont whitefont titlefont mb-0" for="login-email"> Email Address</label>
+                    <input class="border-0 roundedcorners pl-2 button nooutline w-100" type="email" id="login-email"
+                        required />
+                </div>
+                <div class="input-field">
+                    <label class="textfont whitefont titlefont mb-0" for="login-password">Password</label>
+                    <input class="border-0 roundedcorners pl-2 button nooutline w-100" type="password"
+                        id="login-password" required />
+                </div>
+                <button class="btn roundedcorners secondarycolor yellow darken-2 z-depth-0 mt-2"
+                    id="button-login">Login</button>
+                <button class="btn roundedcorners secondarycolor mt-2 logged-out" type="submit"
+                    data-target="modal-signup" id="signup-button">Sign up</button>
+            </form>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        var selectedrecipeimg = "../assets/images/Spghetti&Meatballs.jpg"
+        var selectedrecipename = "Spaghetti with Meatballs"
+
+        $("#recipeimage").attr("src", selectedrecipeimg)
+        $("#recipename").html(selectedrecipename)
+
+    </script>
+</body>
+
+</html>
