@@ -43,12 +43,9 @@
     font-size: 18px;
 }
 
-#submitbttn{
+#loadmorebttn{
     width:120px;
     margin: auto;
-    border-style:solid;
-    border-width: 2px;
-    border-color: #f9b443;
 }
 
 .clickedcolors{
@@ -61,7 +58,74 @@
 }
 
 button:focus {
-    outline:0;
+    outline:0;}
+
+.resultimg{
+    width:100%;
+    max-height: 125px;
+    object-fit:none;
+}
+
+.recipedescription{
+    font: 14px;
+    max-height:70px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.box{
+    height: 250px;
+    width: 250px;
+}
+
+.mwidth{
+    max-width: 999px;
+}
+
+.recipeimg.resize{
+    width: 1000px;
+    height:1000px;
+}
+
+.recipeimg{
+    max-height: 250px;
+    /* background-image: url(../Images/cookingimage.jpg); */
+    background-repeat: no-repeat;
+    width: 100vw;
+    object-fit: cover;
+}
+
+.image { 
+    position: relative; 
+    width: 100%; 
+ }
+ 
+.recipename { 
+    position: absolute; 
+    left: 20px; 
+    bottom: 20px;
+    max-width: 75%; 
+ }
+
+.rightfloat {
+    float:right;     
+ }
+
+.leftfloat{
+    float:left
+}
+
+.subtitlefont{
+    font-size: 18px;
+}
+
+.lineheight{
+    line-height: 22px;
+}
+
+.fadedcolor{
+    color: #e8e8e8; 
 }
 
 .firstImg {
@@ -125,8 +189,4 @@ button:focus {
     align-content: center;
     align-self: center;
 
-}
-
-.rightfloat{
-    float:right
 }
