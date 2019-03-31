@@ -9,8 +9,6 @@
   <link href="../assets/CSS/AddRecipe.css" type="text/css" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<<<<<<< HEAD
-=======
 
   <!-- Javascript link -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -29,58 +27,19 @@
   <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script>
   <script type="text/javascript" src="../assets/javascript/data.js"></script>
->>>>>>> dc56fa71f1e982d577ec6f8ada4f61463180d36b
 </head>
 
 <body>
 
   <nav id="maincolor" class="navbar">
     <a class="navbar-brand" href="#">
-<<<<<<< HEAD
-      <img class="logoimage ml-0" src="../assets/Images/SousChef(templogo).png" alt="logo"></a>
-=======
       <img class="logoimage ml-0" src=../assets/Images/SousChef(templogo).png alt="logo"></a>
->>>>>>> dc56fa71f1e982d577ec6f8ada4f61463180d36b
     <div class="row">
 
       <a id="accountBtn" class="btn  btn-lg mt-2" href="#">Account</a>
       <a id="usernameBtn" class="btn  btn-lg mt-2" href="#">Username</a>
       <img class="userImg mr-3" src="../assets/images/homePageImages/silly-cartoon-face-md.png" alt="user picture"
         width="65px" height="65px" />
-<<<<<<< HEAD
-    </div>
-  </nav>
-
-  <div class="row">
-    <div class="col-1"></div>
-    <div id="mainContent" class=" col-5">
-      <form>
-        <div class="form-group">
-          <label for="exampleFormControlInput1 text-warning">
-            <p class="text-warning mt-3 mb-0">Recipe Name</p>
-          </label>
-          <input type="text" class="form-control" id="recipeNameInput" placeholder=".....">
-        </div>
-        <div class="form-group">
-          <label for="exampleFormControlInput1 text-warning">
-            <p class="text-warning mt-3 mb-0">Ingredients (add one at the time)</p>
-          </label>
-          <input type="text" class="form-control" id="ingridientsInput" placeholder="">
-          <button id="addIngrBtn" type="button" class="btn btn-dark">Add</button>
-        </div>
-
-        <div class="form-group">
-          <label for="exampleFormControlTextarea1">
-            <p class="text-warning mb-0">Step 1</p>
-          </label>
-          <textarea class="form-control" id="stepInput" rows="3"></textarea>
-          <button id="addStepBtn" type="button" class="btn btn-light text-warning">Add Step</button>
-        </div>
-      </form>
-      <button id="startCooking" type="button" class="btn btn-light text-warning">Start Cooking</button>
-      <button id="uploadMore" type="button" class="btn btn-light text-warning">Upload More</button>
-=======
->>>>>>> dc56fa71f1e982d577ec6f8ada4f61463180d36b
     </div>
   </nav>
 
@@ -102,99 +61,6 @@
     </form>
   </div>
 
-<<<<<<< HEAD
-    <div class="col-5">
-      <div class="container mt-3" style="height: 15px;"></div>
-      <div class="card mt-3" style="height: 500px;">
-        <div id="ingrsDisplay" class="row mt-1 ml-3">
-
-        </div>
-        <h1 id="recipeNameDisplay" class="mt-3 text-center"></h1>
-        <!-- <div id="recipeNameDisplay" class="card">
-        Name Goes here
-      </div> -->
-
-
-        <div id="stepsDisplay" class="card-body">
-
-        </div>
-      </div>
-    </div>
-
-
-    <div class="col-1"></div>
-
-
-  </div>
-
-
-
-
-
-
-  <div id="footerHome" class="fixed-bottom bg-secondary col-12"></div>
-
-
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script>
-
-    var ingridientsArray = [];
-    var stepsListArray = [];
-    var recipeNameArray = [];
-
-    // Capture Button Click
-    $("#addStepBtn").on("click", function (event) {
-      // prevent form from trying to submit/refresh the page
-      event.preventDefault();
-
-      // Capture User Inputs and store them into variables
-      var recipeName = $("#recipeNameInput").val().trim();
-      recipeNameArray.push(recipeName);
-      $("#recipeNameDisplay").text(recipeName);
-
-      var stepsList = $('#stepInput').val().trim();
-      console.log(stepsListArray);
-      stepsListArray.push(stepsList);
-      $('#stepsDisplay').append('<p>' + stepsList + '</p>');
-
-    });
-
-    $(document).on('click', function(){
-      var btnToBeRemoved = $('.rmBtn').attr('data-name');
-      btnToBeRemoved.remove();
-      console.log(btnToBeRemoved);
-});
-
-
-    // ===== this code creates buttons with ingridient name and appends into html
-    $('#addIngrBtn').on('click', function () {
-
-      var ingridients = $("#ingridientsInput").val().trim();
-      ingridientsArray.push(ingridients);
-      var removeBtn = $('<button class="rmBtn">remove</button>');
-      
-      removeBtn.attr("data-name", ingridients);
-
-      removeBtn.text(ingridients);
-
-      
-
-      // for (i = 0; i < ingridientsArray.length; i++){}
-
-
-      
-
-      // removeBtn.text(ingridients)
-      $("#ingrsDisplay").append(removeBtn);
-
-      console.log(ingridientsArray);
-    });
-
-  </script>
-
-=======
   <div id="footerHome" class="fixed-bottom bg-secondary"></div>
 
       <!-- Adding modals for sign up/sign in -->
@@ -232,7 +98,6 @@
             </form>
         </div>
     </div>
->>>>>>> dc56fa71f1e982d577ec6f8ada4f61463180d36b
 
 </body>
 

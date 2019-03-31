@@ -128,6 +128,21 @@ $(document).ready(function () {
             });
         });
 
+        
+
     });
+    recipe = {
+        name: recipeNameDisplayed,
+        ings: ingridientsArray,
+        directions: stepsListArray
+}
+
+    $('#save').on('click', (e) => {
+        console.log('document new recipe')
+        db.collection('new recipes').add(recipe).then(function(){
+           
+        });
+
+    })
 
 });
