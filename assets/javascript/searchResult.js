@@ -96,15 +96,13 @@ function getDetails(id_url){
             } 
             
         }
+
         $("#loadmorebttn").on("click", function () {
             renderOptions()
         })
-    
 
         renderOptions() 
         console.log(response)
     }
     });
 }
-
-
