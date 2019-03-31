@@ -57,6 +57,7 @@
         </form>
         <button id="startCooking" type="button" class="bg-light secondarycolor border-0 roundedcorners muli px-3 buttonfont mt-1 text-warning">Start Cooking</button>
         <button id="uploadMore" type="button" class="bg-light secondarycolor border-0 roundedcorners muli px-3 buttonfont mt-1 text-warning">Upload More</button>
+        <button id="save" type="button" class="bg-light secondarycolor border-0 roundedcorners muli px-3 buttonfont mt-1 text-warning">Save</button>
       </div>
 
       <div class="col-md-6 col-sm-12 mt-4 roundedcorners bg-light">
@@ -102,6 +103,11 @@
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
   <script>
+    $('#startCooking').hide();
+      $('#uploadMore').hide();
+
+
+
     var x = 1
     var ingridientsArray = [];
     var stepsListArray = [];
@@ -147,6 +153,14 @@
       $('#nameDisplay').html("<p class='secondarycolor roundedcorners px-2 border-0 titlefont'>" + newname + "</p>");
       $('#recipeNameInput').val('')
     });
+
+    $('#save').on('click', function (){
+      console.log('I was clicked');
+      $('#save').hide();
+      $('#startCooking').show();
+      $('#uploadMore').show();
+
+  });
     // var aaa;
    
     // $(document).on('click', '.rmBtn', function () {
