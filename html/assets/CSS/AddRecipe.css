@@ -1,3 +1,30 @@
+#maincolor {
+    background-color: #ffc866;
+    height: 90px;
+}
+
+.logoimage {
+    height: 30px;
+}
+
+#accountBtn, #usernameBtn {
+    color:white;
+}
+
+.userImg {
+    border-radius: 50px;
+}
+
+#footerHome {
+    height: 80px;
+}
+
+.rmBtn {
+    border-radius: 15px;
+    font-size:16px;
+    width:auto;
+}
+
 .maincolor{
     background-color: #ffc866;
 }
@@ -64,7 +91,7 @@
 button:focus {
     outline:0;}
 
-.resulting{
+.resultimg{
     width:100%;
     max-height: 125px;
     object-fit:none;
@@ -85,6 +112,51 @@ button:focus {
 
 .mwidth{
     max-width: 999px;
+}
+
+.recipeimg.resize{
+    width: 1000px;
+    height:1000px;
+}
+
+.recipeimg{
+    max-height: 250px;
+    /* background-image: url(../Images/cookingimage.jpg); */
+    background-repeat: no-repeat;
+    width: 100vw;
+    object-fit: cover;
+}
+
+.image { 
+    position: relative; 
+    width: 100%; 
+ }
+ 
+.recipename { 
+    position: absolute; 
+    left: 20px; 
+    bottom: 20px;
+    max-width: 75%; 
+ }
+
+.rightfloat {
+    float:right;     
+ }
+
+.leftfloat{
+    float:left
+}
+
+.subtitlefont{
+    font-size: 18px;
+}
+
+.lineheight{
+    line-height: 22px;
+}
+
+.fadedcolor{
+    color: #e8e8e8; 
 }
 
 .firstImg {
@@ -108,8 +180,6 @@ button:focus {
 .logoimage {
     height: 30px;
 }
-
-
 
 #startCookingBtn, #findRecipeBtn {
     border-radius: 35px;
@@ -152,6 +222,12 @@ button:focus {
 
 }
 
-.rightfloat{
-    float:right
+.Congratsfont {
+    font-size: 50px;
+}
+
+@media screen and (max-width: 750px) {
+    .Congratsfont {
+        font-size: 30px;
+    }
 }
