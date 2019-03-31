@@ -124,11 +124,9 @@
            
 
  function userSearchInfo(){
-    var userInput = $("#userInput").val();
+    var userInput = $("#userInput").change().val();
     $("#submitURL").attr("href", `../html/SearchResult.html?Ingredient=${userInput}&Area=${areaChosen}&Category=${categoryChosen}`)
-   
-
-        
-
     }
+
+
 
