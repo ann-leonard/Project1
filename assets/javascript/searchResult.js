@@ -6,7 +6,7 @@ function getUrlParameter(name) {
     return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
 };
 $(document).ready(function(){
-    var queryURL = "https://www.themealdb.com/api/json/v1/1/filter.php?i=" + getUrlParameter("Ingredient") 
+    var queryURL =  "https://www.themealdb.com/api/json/v1/1/filter.php?i="+ getUrlParameter("Ingredient") 
     getResponse(queryURL)
 })
 function getResponse(queryURL){
@@ -22,7 +22,12 @@ function getResponse(queryURL){
             let id_url = "https://www.themealdb.com/api/json/v1/1/lookup.php?i="+ id
             getDetails(id_url)
         }
-      });
+      }).catch(function(){
+          $("#searchresults").append($("<div class='roundedcorners box m-3 p-2 bg-light text-center mx-auto'>"))
+          $(".box").text('Sorry, we did not find anything for that search request. Please try a different ingredient.')
+          $(".box").append('<a href="../html/recipesearch.html"><button class="goBack secondarycolor btn btn-lg text-center mt-2 p-1 mx-auto titlefont bg-light">Go back</button>')
+          
+        })
 }
 
 function getDetails(id_url){
@@ -31,12 +36,10 @@ function getDetails(id_url){
         method: "GET"
     }).then(function(response){
         secondResponse = response.meals[0]
-        if (getUrlParameter("Area") === response.meals[0].strArea && getUrlParameter("Category") === response.meals[0].strCategory){
+
+        if (getUrlParameter("Area") === response.meals[0].strArea || getUrlParameter("Category") === response.meals[0].strCategory){
         //    console.log(response)
-        }
-        else if (getUrlParameter("Area") === response.meals[0].strArea || getUrlParameter("Category") === response.meals[0].strCategory){
-        //    console.log(response)
-        }
+        
         var secondResponse
         var moreOptions = true
         var recipeName = secondResponse.strMeal
@@ -90,7 +93,8 @@ function getDetails(id_url){
                 $("#searchresults").append(box)
                 // Load More becomes Edit Search
                 $("#loadmorebttn").html("Edit Search")
-            }    
+            } 
+            
         }
 
         $("#loadmorebttn").on("click", function () {
@@ -99,5 +103,6 @@ function getDetails(id_url){
 
         renderOptions() 
         console.log(response)
+    }
     });
 }
