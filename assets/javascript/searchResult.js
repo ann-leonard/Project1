@@ -25,9 +25,9 @@ function getResponse(queryURL){
             getDetails(id_url)
         }
       }).catch(function(){
-          $("#searchresults").append($("<div class='roundedcorners box m-3 p-2 bg-light text-center mx-auto'>"))
+          $("#searchresults").append($("<div class='roundedcorners box m-3 p-2 bg-light text-center mx-auto secondarycolor'>"))
           $(".box").text('Sorry, we did not find anything for that search request. Please try a different ingredient.')
-          $(".box").append('<a href="../html/recipesearch.html"><button class="goBack secondarycolor btn btn-lg text-center mt-2 p-1 mx-auto titlefont bg-light">Go back</button>')
+          $(".box").append('<a href="../html/recipesearch.html"><button class="goBack secondarycolor roundedcorners  p-2 btn btn-lg text-center mt-2 p-1 mx-auto titlefont bg-light">Go back</button>')
           
         })
 }
