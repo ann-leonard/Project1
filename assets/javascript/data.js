@@ -24,8 +24,9 @@ $(document).ready(function () {
 
         if (data.length) {
             data.forEach(doc => {
-                const guide = doc.data();
-                console.log(guide);
+                const favorites = $("<div>").text(doc.data().name);
+                console.log(favorites);
+                $("#please").append(favorites);
             });
         } else {
             $("#connect").empty();
@@ -38,16 +39,11 @@ $(document).ready(function () {
         window.open("html/userAccount.html");
     });
 
-
     $("#logo").on("click", (e) => {
         window.open("index.html");
     })
 
 
-
-    $("#logo").on("click", (e) => {
-        window.open("index.html");
-    })
 
     $("DOMContentLoaded", function () {
         console.log("hi")
@@ -72,7 +68,7 @@ $(document).ready(function () {
         //checking to see if the user is logged in or not then displaying guides if they are
         auth.onAuthStateChanged(user => {
             if (user) {
-                db.collection("users").onSnapshot(snapshot => {
+                db.collection("favorites").onSnapshot(snapshot => {
                     setupGuides(snapshot.docs)
                     setupUI(user);
                 })
@@ -148,29 +144,91 @@ $(document).ready(function () {
             });
         });
 
-        $("#saveBtn").on("click", (e) => {
-            auth.onAuthStateChanged(user => {
-                if (user) {
-                    cred => { 
-                        return db.collection("users").doc(cred.user.uid).set({
-                            selectedrecipeimg: selectedrecipeimg,
-                            selectedrecipename: selectedrecipename.val()
-                        });
-                    };
-                } else {
-                    console.log("please log in")
-                }
-            });
+    function getUrlParameter(name) {
+    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+    var results = regex.exec(location.search);
+    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+};
+$(document).ready(function(){
+    var queryURL = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + getUrlParameter("Id") 
+    getResponse(queryURL)
 
+
+})
+
+function getResponse(queryURL){
+    $.ajax({
+        url: queryURL
+        ,
+        method: "GET" 
+      }).then(function(response) {
+        console.log(queryURL)
+        console.log(response)
+        var meal = response.meals[0]
+        var recipeImg = response.strMealThumb
+        var recipeName = response.meals[0].strMeal
+        console.log(response.meals[0].strMeal)
+        $("#recipeName").append(recipeName)
+        var ingredientbox = $("<button class='buttoncolor secondarycolor roundedcorners px-3 py-1 border-0 m-1'>" +  + "</button>")
+        var recipebox = $("<div  class='my-4'>")
+        recipebox.text(meal.strInstructions.split(","))
+        console.log(recipebox.html())
+        //var Instructions = meal.strInstructions
+        //console.log(Instructions.split("."))
+        var ingredients = []
+
+        for (i=1;i<20;i++){
+            if (meal["strIngredient" + i]){
+                ingredients.push(meal["strIngredient" + i])
+            }
+        }
+        console.log (ingredients)
+        for (i=0;i<ingredients.length;i++){
+            $("#ingredientsList").append(ingredients[i]+"<br>")
+        }
+        $("#recipeList").append(recipebox)
+        $("#recipeImage").attr("src",meal.strMealThumb)
+        $("#finishedBtn").on("click",function(){
+            $("#finishedLink").attr("href",`../html/Congratulations.html?name=${meal.strMeal}`)
         })
+
+                // var recipeImage = $("#recipeImage");
+                var rName = recipeName;
+                console.log(rName);
+            
+                var docData = {
+                    name: rName
+                };
+            
+                $("#saveBtn").on("click", (e) => {
+                    console.log("thanks for clicking");
+                    db.collection("favorites").add(docData).then(function(){
+                       console.log("document written");
+                    $("#saveBtn").hide();
+                    });
+            
+                })
+    })
+
+
+    
+}
+
+        
 
 
     });
 
+    var recName = newname;
+    var ingArray = ingridientsArray;
+    var steps = stepsListArray;
+
+
     var recipe = {
-        name: "Jim",
-        ings: "rick",
-        directions: "jill"
+        name: recName,
+        ings: ingArray,
+        directions: steps
     };
 
     $("#save").on("click", (e) => {
@@ -181,20 +239,6 @@ $(document).ready(function () {
     })
 
 
-
-
-    var docData = {
-        img: selectedrecipeimg, 
-        name: selectedrecipename,
-        link: ""
-    };
-
-    $("#saveBtn").on("click", (e) => {
-        db.collection("recipes").add(docData).then(function(){
-           console.log("document written")
-        });
-
-    })
     
 
 });

@@ -1,4 +1,71 @@
 
+// function getUrlParameter(name) {
+//     name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+//     var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+//     var results = regex.exec(location.search);
+//     return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+// };
+// $(document).ready(function(){
+//     var queryURL = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + getUrlParameter("Id") 
+//     getResponse(queryURL)
+
+
+// })
+// function getResponse(queryURL){
+//     $.ajax({
+//         url: queryURL
+//         ,
+//         method: "GET" 
+//       }).then(function(response) {
+//         console.log(queryURL)
+//         console.log(response)
+//         var meal = response.meals[0]
+//         var recipeImg = response.strMealThumb
+//         var recipeName = response.meals[0].strMeal
+//         console.log(response.meals[0].strMeal)
+//         $("#recipeName").append(recipeName)
+//         var ingredientbox = $("<button class='buttoncolor secondarycolor roundedcorners px-3 py-1 border-0 m-1'>" +  + "</button>")
+//         var recipebox = $("<div  class='my-4'>")
+//         recipebox.text(meal.strInstructions.split(","))
+//         console.log(recipebox.html())
+//         //var Instructions = meal.strInstructions
+//         //console.log(Instructions.split("."))
+//         var ingredients = []
+
+//         for (i=1;i<20;i++){
+//             if (meal["strIngredient" + i]){
+//                 ingredients.push(meal["strIngredient" + i])
+//             }
+//         }
+//         console.log (ingredients)
+//         for (i=0;i<ingredients.length;i++){
+//             $("#ingredientsList").append(ingredients[i]+"<br>")
+//         }
+//         $("#recipeList").append(recipebox)
+//         $("#recipeImage").attr("src",meal.strMealThumb)
+//         $("#finishedBtn").on("click",function(){
+//             $("#finishedLink").attr("href",`../html/Congratulations.html?name=${meal.strMeal}`)
+//         })
+
+//                 // var recipeImage = $("#recipeImage");
+//                 var rName = recipeName;
+//                 console.log(rName);
+            
+//                 var docData = {
+//                     // img: recipeImage, 
+//                     name: rName
+//                 };
+            
+//                 $("#saveBtn").on("click", (e) => {
+//                     console.log("thanks for clicking")
+//                     db.collection("favorites").add(docData).then(function(){
+//                        console.log("document written")
+//                     });
+            
+//                 })
+//     })
+
+
 function getUrlParameter(name) {
     name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
     var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
@@ -56,7 +123,13 @@ function getResponse(queryURL){
         })
     })
     
-}
+// }
+
+
+
+
+
+
 /*    var selectedingredients = ["2 (30 ounce) jars spaghetti sauce", "2 lbs lean ground beef" , "2 eggs" , "3⁄4 cup dry breadcrumbs", "1⁄4 cup fresh parsley, chopped", "1 garlic clove, minced" , "1⁄2-1 teaspoon salt", "1⁄4 cup parmesan cheese" , "1 lb spaghetti, cooked al dente"]
         var selectedrecipe = ["Place sauce in a large saucepan and simmer over medium heat" , "In large bowl mix beef, eggs, crumbs, parsley, garlic, salt and Parmesan.", "Shape into 18 meatballs.", "Place meatballs in simmering sauce.", "When sauce returns to a simmer, cover and cook 30-35 minutes (or more!) till cooked through.", "Serve sauce and meatballs over warm spaghetti."]
         //Attach variable to the website

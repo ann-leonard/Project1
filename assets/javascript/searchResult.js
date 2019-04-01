@@ -68,7 +68,7 @@ function getDetails(id_url){
                     //Append the Save and Cook Buttons
                     var buttonsDiv = $("<div class='my-1 d-flex justify-content-around'></div>")
 
-                    buttonsDiv.append("<button class='border-0 bg-light secondarycolor muli buttonfont roundedcorners'>SAVE</button>") 
+                    buttonsDiv.append("<button id='saveIt' class='border-0 bg-light secondarycolor muli buttonfont roundedcorners'>SAVE</button>") 
 
                     buttonsDiv.append(`<a id='cookBtn' href='../html/recipe.html?Id=${secondResponse.idMeal}' <button class='border-0 bg-light secondarycolor muli buttonfont blueline p-2 roundedcorners'>COOK</button></a>`)
                     
