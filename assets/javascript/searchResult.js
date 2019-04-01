@@ -1,4 +1,6 @@
 var firstResponse
+
+ 
 function getUrlParameter(name) {
     name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
     var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
@@ -35,18 +37,14 @@ function getDetails(id_url){
         url: id_url,
         method: "GET"
     }).then(function(response){
-        secondResponse = response.meals[0]
-
-        if (getUrlParameter("Area") === response.meals[0].strArea || getUrlParameter("Category") === response.meals[0].strCategory){
-        //    console.log(response)
-        
-        var secondResponse
+        var  secondResponse = response.meals[0]
         var moreOptions = true
         var recipeName = secondResponse.strMeal
        // console.log(secondResponse.strMealThumb)
         var recipeImg = secondResponse.strMealThumb
         var recipeDes = []
         var title
+       
         function renderOptions(){
             if (moreOptions === true){
            //     for(var i = 0; i< firstResponse; i++){
@@ -97,12 +95,13 @@ function getDetails(id_url){
             
         }
 
-        $("#loadmorebttn").on("click", function () {
-            renderOptions()
-        })
-
+        if (getUrlParameter("Area") === response.meals[0].strArea || getUrlParameter("Category") === response.meals[0].strCategory){
         renderOptions() 
         console.log(response)
-    }
+        }
+        else{
+            renderOptions()
+        }
     });
 }
+
