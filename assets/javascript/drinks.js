@@ -22,7 +22,7 @@
         $(".card-text").text("Go to recipe?")
         $(".drinkBtn").remove()
         $(".soberDrinkBtn").remove()
-        $(".card").append(`<a href='recipe.html?id=${selectedDrink.idDrink}' class='drinkRecipe btn btn-primary'>See full recipe`)
+        $(".card").append(`<a href='recipe.html?id=${selectedDrink.idDrink}' class='drinkRecipe secondarycolor roundedcorners border-0 buttoncolor btn btn-primary'>See full recipe`)
         $(".cardImg").attr("src", selectedDrink.strDrinkThumb)
        })
 }
@@ -38,7 +38,7 @@ function getDetails(id_url){
         var recipeName = drink.strDrink
         $("#recipeName").append(recipeName)
         var ingredientbox = $("<button class='buttoncolor secondarycolor roundedcorners px-3 py-1 border-0 m-1'>" +  + "</button>")
-        var recipebox = $("<div  class='my-4'>")
+        var recipebox = $("<div class='roundedcorners bg-light p-2 my-4'>")
         recipebox.text(drink.strInstructions.split(","))
         console.log(recipebox.html())
         var ingredients = []
@@ -56,13 +56,13 @@ function getDetails(id_url){
         }
         console.log (ingredients)
         for (i=0;i<ingredients.length;i++){
-            $("#ingredientsList").append(`<h5 id="ing">${measure[i]}<label class="text-muted m-3">${ingredients[i]}</label></h5><br>`)
+            $("#ingredientsList").append(`<button id="ing" class="buttonfont secondarycolor buttoncolor border-0 roundedcorners px-3 mt-2 mx-2">${measure[i]}<label class="text-muted mb-0">${ingredients[i]}</label></button>`)
         }
  
         $("#recipeList").append(recipebox)
         $("#recipeImage").attr("src",drink.strDrinkThumb)
         $(".finishedBtn").on("click",function(){
-            $("#finishedLink").attr("href",`../html/Congratulations.html?name=${drink.strDrink}`)
+        $("#finishedLink").attr("href",`../html/Congratulations2.html?name=${drink.strDrink}`)
         })
         console.log(response)
     })

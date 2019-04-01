@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.typekit.net/pqy5rcu.css">
-    <link rel="stylesheet" type="text/css" href="../assets/CSS/recipestyle.css">
+    <link rel="stylesheet" type="text/css" href="../assets/CSS/congratulations.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
     <title>sousChef-RecipeSearch</title>
@@ -26,11 +26,12 @@
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script>
     <script type="text/javascript" src="../assets/javascript/data.js"></script>
-
 
 </head>
 
@@ -47,7 +48,7 @@
             <form class="form-inline">
                 <a id="accountBtn" class="btn  btn-lg mt-2 logged-in" href="#"></a>
                 <button
-                    class="btn whitebg roundedcorners secondarycolor border-0 my-4 my-sm-0 modal-trigger logged-out titlefont"
+                    class="btn whitebg roundedcorners secondarycolor border-0 my-4 my-sm-0 mx-2 modal-trigger logged-out titlefont"
                     type="submit" data-target="modal-login">Sign in</button>
                 <button
                     class="btn whitebg roundedcorners secondarycolor border-0 my-4 my-sm-0 modal-trigger logged-out titlefont"
@@ -57,29 +58,24 @@
     </nav>
 
     <div class="image">
-
-        <img id="recipeImage" class="recipeimg" alt="Image">
-        <div id="recipeName" class="recipeName roundedcorners bg-light titlefont secondarycolor p-2 mw-75"></div>
-
-  </div>
-    <div class="bar maincolor"> </div>
-    <div class="container p-1 mt-4">
+            <img id="recipeimage" class="recipeimg" src="../assets/Images/Homepgbackgroundimg.jpg" alt="Image">
+      </div>
+        <div class="bar maincolor"> </div>
+   
+    <div class="container">
         <div class="row">
-            <div class="col-12 secondarycolor titlefont muli">INGREDIENTS</div>
-        </div>
-        <div class="row">
-            <div id="ingredientsList" class="col-12"></div>
-        </div>
-        <div class="row mt-4">
-            <div class="col-12 secondarycolor titlefont muli">RECIPE</div>
+            <div class="col-12 mt-5 secondarycolor Congratsfont text-center muli">
+                CONGRATS! YOU DID IT!
+            </div>
         </div>
         <div class="row">
-            <div id="recipeList" class="col-12"></div>
-        </div>
-        <div class="row">
-           <a id="finishedLink" href=""> <button class="finishedBtn secondarycolor tittlefont muli buttoncolor roundedcorners btn btn-lg">Finished!</button></a>
-        </div>
-    </div>
+            <div class="col-6 mt-4 p-2 text-center">
+                <a id="saveBtn" class="contents py-2 px-3 secondarycolor rightfloat mr-5 buttoncolor roundedcorners titlefont"> SAVE</a>
+            </div>
+            <div class="col-6 mt-4 p-2 text-center">
+                <a class="contents py-2 px-3 secondarycolor leftfloat ml-5 buttoncolor roundedcorners titlefont"
+                    href="../index.html">HOME</a>
+            </div>
 
     <div id="modal-login" class="modal">
 
@@ -104,12 +100,15 @@
                     data-target="modal-signup" id="signup-button">Sign up</button>
             </form>
         </div>
+
     </div> 
 
     <div id="modal-login" class="modal">
-            <div class="modal-header">
+
+                <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" id="closeBtn">&times;</button>
                 </div>
+      
             <div class="modal-content col-md-5 mt-3 rightfloat maincolor roundedcorners p-3 border-0 mr-2 mt-4">
                 <form id="login-form">
                     <div class="input-field">
@@ -126,12 +125,9 @@
             </div>
         </div>
 
+    </div>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="../assets/javascript/drinks.js"></script>
-
-<script src="../assets/javascript/cook.js"></script>
-
+<script src="../assets/javascript/drinks.js "></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 </body>
-
 </html>

@@ -54,7 +54,7 @@ function getDetails(id_url){
                     var box = $("<div class='roundedcorners box m-3 p-2 bg-light mx-auto'>")
                     //console.log(box)
                     //Create and append the title div
-                    title =$("<div id='item' class='secondarycolor buttonfont mt-1 muli'>" + recipeName + "</div>")
+                    title =$("<div id='item' class='secondarycolor buttonfont recipedescription mt-1 muli'>" + recipeName + "</div>")
                     box.append(title)
                     //Append the image to the box
                     //box.append("<img class='resultimg mt-1'>");
@@ -70,7 +70,7 @@ function getDetails(id_url){
 
                     buttonsDiv.append("<button class='border-0 bg-light secondarycolor muli buttonfont roundedcorners'>SAVE</button>") 
 
-                    buttonsDiv.append(`<a id='cookBtn'  href='../html/recipe.html?Id=${secondResponse.idMeal}' <button class='border-0 bg-light secondarycolor muli buttonfont blueline roundedcorners'>COOK</button></a>`)
+                    buttonsDiv.append(`<a id='cookBtn' href='../html/recipe.html?Id=${secondResponse.idMeal}' <button class='border-0 bg-light secondarycolor muli buttonfont blueline p-2 roundedcorners'>COOK</button></a>`)
                     
                    // $("#cookBtn").attr("href", "../html/recipe.html?Id=" + secondResponse.idMeal)
 
