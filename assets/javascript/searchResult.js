@@ -1,4 +1,6 @@
 var firstResponse
+
+ 
 function getUrlParameter(name) {
     name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
     var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
@@ -23,9 +25,9 @@ function getResponse(queryURL){
             getDetails(id_url)
         }
       }).catch(function(){
-          $("#searchresults").append($("<div class='roundedcorners box m-3 p-2 bg-light text-center mx-auto'>"))
+          $("#searchresults").append($("<div class='roundedcorners box m-3 p-2 bg-light text-center mx-auto secondarycolor'>"))
           $(".box").text('Sorry, we did not find anything for that search request. Please try a different ingredient.')
-          $(".box").append('<a href="../html/recipesearch.html"><button class="goBack secondarycolor btn btn-lg text-center mt-2 p-1 mx-auto titlefont bg-light">Go back</button>')
+          $(".box").append('<a href="../html/recipesearch.html"><button class="goBack secondarycolor roundedcorners  p-2 btn btn-lg text-center mt-2 p-1 mx-auto titlefont bg-light">Go back</button>')
           
         })
 }
@@ -35,18 +37,14 @@ function getDetails(id_url){
         url: id_url,
         method: "GET"
     }).then(function(response){
-        secondResponse = response.meals[0]
-
-        if (getUrlParameter("Area") === response.meals[0].strArea || getUrlParameter("Category") === response.meals[0].strCategory){
-        //    console.log(response)
-        
-        var secondResponse
+        var  secondResponse = response.meals[0]
         var moreOptions = true
         var recipeName = secondResponse.strMeal
        // console.log(secondResponse.strMealThumb)
         var recipeImg = secondResponse.strMealThumb
         var recipeDes = []
         var title
+       
         function renderOptions(){
             if (moreOptions === true){
            //     for(var i = 0; i< firstResponse; i++){
@@ -56,7 +54,7 @@ function getDetails(id_url){
                     var box = $("<div class='roundedcorners box m-3 p-2 bg-light mx-auto'>")
                     //console.log(box)
                     //Create and append the title div
-                    title =$("<div id='item' class='secondarycolor buttonfont mt-1 muli'>" + recipeName + "</div>")
+                    title =$("<div id='item' class='secondarycolor buttonfont recipedescription mt-1 muli'>" + recipeName + "</div>")
                     box.append(title)
                     //Append the image to the box
                     //box.append("<img class='resultimg mt-1'>");
@@ -72,7 +70,7 @@ function getDetails(id_url){
 
                     buttonsDiv.append("<button id='saveIt' class='border-0 bg-light secondarycolor muli buttonfont roundedcorners'>SAVE</button>") 
 
-                    buttonsDiv.append(`<a id='cookBtn'  href='../html/recipe.html?Id=${secondResponse.idMeal}' <button class='border-0 bg-light secondarycolor muli buttonfont blueline roundedcorners'>COOK</button></a>`)
+                    buttonsDiv.append(`<a id='cookBtn' href='../html/recipe.html?Id=${secondResponse.idMeal}' <button class='border-0 bg-light secondarycolor muli buttonfont blueline p-2 roundedcorners'>COOK</button></a>`)
                     
                    // $("#cookBtn").attr("href", "../html/recipe.html?Id=" + secondResponse.idMeal)
 
@@ -97,12 +95,13 @@ function getDetails(id_url){
             
         }
 
-        $("#loadmorebttn").on("click", function () {
-            renderOptions()
-        })
-
+        if (getUrlParameter("Area") === response.meals[0].strArea || getUrlParameter("Category") === response.meals[0].strCategory){
         renderOptions() 
         console.log(response)
-    }
+        }
+        else{
+            renderOptions()
+        }
     });
 }
+
