@@ -23,11 +23,16 @@ function getResponse(queryURL){
         console.log(response.meals[0].strMeal)
         $("#recipeName").append(recipeName)
         var ingredientbox = $("<button class='buttoncolor secondarycolor roundedcorners px-3 py-1 border-0 m-1'>" +  + "</button>")
-        var recipebox = $("<div  class='my-4'>")
-        recipebox.append(`<p style="font-size:1.2em;" class="text-dark">${meal.strInstructions.split(",")}`)
+        console.log("ingredientbox: " + ingredientbox)
+        var recipebox = $("<div  class='mt-2 mb-4 buttoncolor roundedcorners px-3 py-2 tittlefont text-muted'>")
+        recipebox.append(`<div>${meal.strInstructions.split(",")}`)
+        console.log(recipebox)
         console.log(recipebox.html())
-        //var Instructions = meal.strInstructions
-        //console.log(Instructions.split("."))
+        var Instructions = meal.strInstructions
+        console.log(Instructions.split("."))
+        var InstructionsArray = Instructions.split(".")
+        console.log(InstructionsArray)
+        
         var ingredients = []
         var measure = []
         for (i=1;i<20;i++){
@@ -41,13 +46,13 @@ function getResponse(queryURL){
             }
         }
          for (i=0;i<ingredients.length;i++){
-            $("#ingredientsList").append(`<h5 id="ing">${measure[i]}<label class="text-muted m-3">${ingredients[i]}</label></h5><br>`)
+            $("#ingredientsList").append(`<button id="ing" class=" buttonfont secondarycolor buttoncolor border-0 roundedcorners px-3 mt-2 mx-2 ">${measure[i]}<label class="text-muted mb-0 ml-2">${ingredients[i]}</label></button>`)
         }
-       $("#ing").addClass("font-weight-bold")
+        // $("#ing").addClass("font-weight-bold")
         $("#recipeList").append(recipebox)
         $("#recipeImage").attr("src",meal.strMealThumb)
         $(".finishedBtn").on("click",function(){
-            $("#finishedLink").attr("href",`../html/Congratulations.html?name=${meal.strMeal}`)
+        $("#finishedLink").attr("href",`../html/Congratulations.html?name=${meal.strMeal}`)
         })
     })
     

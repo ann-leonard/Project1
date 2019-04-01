@@ -78,7 +78,7 @@
  
                          // ADD THE X
                          // Create a Div to hold the x
-                         var xdiv = $("<img class='ml-2 xctbutton' src=../images/x.png>")
+                         var xdiv = $("<img class='ml-2 xctbutton' src=../assets/images/x.png>")
                          // append xdiv to html
                          $(this).append(xdiv)
  

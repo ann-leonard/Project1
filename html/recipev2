@@ -41,7 +41,7 @@
     <!-- </nav> -->
     <nav id="maincolor" class="navbar">
         <a class="navbar-brand" href="../index.html">
-            <img class="logoimage" src=../assets/Images/sousChef.png alt="logo">
+            <img class="logoimage" src=../assets/Images/SousChef(templogo).png alt="logo">
         </a>
         <div class="row mr-1">
             <form class="form-inline">
@@ -57,10 +57,9 @@
     </nav>
 
     <div class="image">
+        <img id="recipeimage" class="recipeimg" alt="Image">
 
-        <img id="recipeImage" class="recipeimg" alt="Image">
-        <div id="recipeName" class="recipeName roundedcorners bg-light titlefont secondarycolor p-2 mw-75"></div>
-
+        <div id="recipename" class="recipename roundedcorners bg-light titlefont secondarycolor p-2 mw-75 muli"> </div>
   </div>
     <div class="bar maincolor"> </div>
     <div class="container p-1 mt-4">
@@ -68,17 +67,15 @@
             <div class="col-12 secondarycolor titlefont muli">INGREDIENTS</div>
         </div>
         <div class="row">
-            <div id="ingredientsList" class="col-12"></div>
+            <div id="ingredientslist" class="col-12"></div>
         </div>
         <div class="row mt-4">
             <div class="col-12 secondarycolor titlefont muli">RECIPE</div>
         </div>
         <div class="row">
-            <div id="recipeList" class="col-12"></div>
+            <div id="recipelist" class="col-12"></div>
         </div>
-        <div class="row">
-           <a id="finishedLink" href=""> <button class="finishedBtn secondarycolor tittlefont muli buttoncolor roundedcorners btn btn-lg">Finished!</button></a>
-        </div>
+
     </div>
 
     <div id="modal-login" class="modal">
@@ -128,10 +125,4 @@
 
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="../assets/javascript/drinks.js"></script>
-
-<script src="../assets/javascript/cook.js"></script>
-
-</body>
-
-</html>
+<script type="text/javascript" src="../assets/javascript/cook.js">
